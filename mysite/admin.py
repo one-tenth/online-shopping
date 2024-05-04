@@ -4,6 +4,6 @@ from django.contrib import admin
 from mysite import models
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display=['memberNum','username','borndate','gender','phoneNum','email']
+    list_display=['memberId','borndate','gender','phoneNum']
 
 admin.site.register(Member,MemberAdmin)
