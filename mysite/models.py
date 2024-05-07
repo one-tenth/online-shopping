@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import *
+from django.conf import settings
 # Create your models here.
 class Member(AbstractUser):
     borndate = models.CharField(max_length=10)
@@ -32,3 +33,12 @@ class InventoryChange(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - 尺寸: {self.size}, 颜色: {self.color}, 價格: {self.price}, 數量: {self.quantity}, 變更類型: {self.get_change_type_display()}"
+
+class shoppingCart(models.Model):
+    member_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    shopNum = models.AutoField(primary_key=True)
+    product_id = models.ForeignKey(Product,on_delete=models.CASCADE)
+    orderQua = models.CharField(max_length=10,default=0)
+
+    def __str__(self):
+        return str(self.shopNum)
