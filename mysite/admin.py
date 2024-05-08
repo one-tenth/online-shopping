@@ -7,7 +7,7 @@ class MemberAdmin(admin.ModelAdmin):
     list_display=['username','id','borndate','gender','phoneNum']
 
 class shoppingCartAdmin(admin.ModelAdmin):
-    list_display=['member_id','shopNum','product_id','orderQua']
+    list_display=['member_id','id','product_id','orderQua']
 
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Product)

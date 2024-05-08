@@ -35,10 +35,9 @@ class InventoryChange(models.Model):
         return f"{self.product.name} - 尺寸: {self.size}, 颜色: {self.color}, 價格: {self.price}, 數量: {self.quantity}, 變更類型: {self.get_change_type_display()}"
 
 class shoppingCart(models.Model):
-    member_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    shopNum = models.AutoField(primary_key=True)
+    member_id = models.ForeignKey(Member, on_delete=models.CASCADE)#on_delete=models.CASCADE 就是檢查參照完整性
     product_id = models.ForeignKey(Product,on_delete=models.CASCADE)
     orderQua = models.CharField(max_length=10,default=0)
 
     def __str__(self):
-        return str(self.shopNum)
+        return f"購物車編號: {self.id} - 會員: {self.member_id.username} - 產品: {self.product_id.name} - 數量: {self.orderQua}"
