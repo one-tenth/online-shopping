@@ -8,8 +8,8 @@ class Member(AbstractUser):
     gender = models.CharField(max_length=5,choices=Gender)
     phoneNum = models.CharField(max_length=10)
 
-    def __str__(self):
-        return  self.gender
+    def __str__(self):#看你要顯示啥
+        return  str(self.id)
     
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -41,3 +41,4 @@ class shoppingCart(models.Model):
 
     def __str__(self):
         return f"購物車編號: {self.id} - 會員: {self.member_id.username} - 產品: {self.product_id.name} - 數量: {self.orderQua}"
+
