@@ -8,7 +8,7 @@ class Member(AbstractUser):
     gender = models.CharField(max_length=5,choices=Gender)
     phoneNum = models.CharField(max_length=10)
 
-    def __str__(self):#看你要顯示啥
+    def __str__(self):#看你要顯示啥 所以有可能是他的錯
         return  str(self.id)
     
 class Product(models.Model):
