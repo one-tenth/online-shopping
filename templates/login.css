@@ -1,6 +1,7 @@
 .one{
     color: rgb(10, 10, 10);
     font-size: 50px;
+    padding-left: 600px;
 }
 
 .two{
@@ -38,11 +39,11 @@
 }
 
 .username, .password{
-    width: 25%;
-    height: 35px;
+    width: 40%;
+    height: 50px;
     border-radius: 25px;
     margin-bottom: 45px;
-    margin-left: 2%;
+    margin-left: 5%;
     font-size: 35px;
     font-family: 微軟正黑體;
     border:none;
@@ -58,7 +59,7 @@
     font-family: 微軟正黑體;
     font-size: 25px;
     margin-top: 0;
-    margin-left: 7%;
+    margin-left: 18%;
     letter-spacing: 2px;
 }
 
@@ -68,11 +69,11 @@
 }
 
 .last{
-    margin-left: 10%;
+    margin-left: 20%;
     background-color: rgb(255, 255, 255);
     color: #000;
-    height: 60px;
-    width: 85px;
+    height: 80px;
+    width: 125px;
     font-size: 20px;
     margin-top: 2%;
     border-color: #622cf7;
