@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,16 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
 <body>
     <div class="first">
-        <img class="photo" src="static/images/IMG_5090.png">
+        <img class="photo" src="{% static 'images/defult.jpg' %}" type="image/png">
         <p class="one">會員登入</p>
     </div>
     <div class="input">
-        <input class="username" class="search" type="text" placeholder="帳號:    1234567@gmail.com">
+        <input class="username" class="search" type="text" placeholder="帳號:1234567@gmail.com">
         <input class="password" class="search" type="text" placeholder="密碼:">
     </div>
 
