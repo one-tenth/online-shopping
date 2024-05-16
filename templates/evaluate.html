@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/evaluate.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="two">
+            <p class="one">評價此商品</p>
+        </div>
+        <div class="three">
+            <p class="three1">針織吊帶</p>
+            <p class="three2">規格: 灰色/XS</p>
+        </div>
+    </header>
+    <hr>
+    <footer>
+        <div class="four">
+            <p>非常滿意</p>
+            <p>滿意</p>
+            <p>普通</p>
+            <p>不滿意</p>
+            <p>非常不滿意</p>
+        </div>
+        <form class="choose">
+            <label class="last-1" for="option1">產品品質:</label>
+            <input type="checkbox" class="option1" name="option1" value="Option 1">
+            <input type="checkbox" class="option2" name="option2" value="Option 2">
+            <input type="checkbox" class="option3" name="option3" value="Option 3">
+            <input type="checkbox" class="option4" name="option4" value="Option 4">
+            <input type="checkbox" class="option5" name="option5" value="Option 5">
+            
+          </form>
+          <form class="choose">
+            <label class="last-1" for="option1">物流服務:</label>
+            <input type="checkbox" class="option1" name="option1" value="Option 1">
+            <input type="checkbox" class="option2" name="option2" value="Option 2">
+            <input type="checkbox" class="option3" name="option3" value="Option 3">
+            <input type="checkbox" class="option4" name="option4" value="Option 4">
+            <input type="checkbox" class="option5" name="option5" value="Option 5">
+            
+          </form>
+        <div class="seven">
+            <p>其他:</p>
+            <input class="seven-2" placeholder="請輸入文字:">
+            <p class="last">提交</p>
+        </div>
+    </footer>
+    
+
+
+</body>
+
+</html>

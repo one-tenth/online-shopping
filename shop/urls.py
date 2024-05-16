@@ -20,4 +20,6 @@ from mysite import views as mv
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('login/', mv.login, name = "login"),
+    path('evaluate/', mv.evaluate, name = "evaluate"),
+    path("product/", mv.product, name="product")
 ]
