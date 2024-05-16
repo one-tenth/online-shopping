@@ -5,7 +5,7 @@ from django import forms as LoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-<<<<<<< HEAD
+
 # Create your views here.
 def login(request):
     return render(request, 'login.html')
@@ -13,7 +13,7 @@ def evaluate(request):
     return render(request,'evaluate.html')
 def product(request):
     return render(request, "product.html")
-=======
+
 def login (request):
     '''
     if request.method == 'GET':
@@ -41,4 +41,4 @@ def login (request):
         massge='ERROR'
         '''
     return render(request,'login.html',locals())#一定要回應
->>>>>>> d86fa81854106578cae3014c84ce356297076321
+
