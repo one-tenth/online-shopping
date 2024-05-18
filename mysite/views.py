@@ -35,6 +35,8 @@ def evaluate(request):
     return render(request,'evaluate.html')
 def product(request):
     return render(request, "product.html")
+def home(request):
+    return render(request, "home.html") 
 
 '''
 def login (request):

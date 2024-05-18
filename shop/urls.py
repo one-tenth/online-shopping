@@ -22,5 +22,6 @@ urlpatterns = [
     path('login/', mv.logins, name = "login"),
     ##path('login/', mv.login_view, name='login'),
     path('evaluate/', mv.evaluate, name = "evaluate"),
-    path("product/", mv.product, name="product")
+    path("product/", mv.product, name="product"),
+    path('home/',mv.home,name="home"),
 ]

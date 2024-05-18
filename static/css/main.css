@@ -1,0 +1,231 @@
+.top{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 让子元素尽可能地平均分配，使它们之间有空白 */
+    align-items: center; /* 垂直居中子元素 */
+}
+
+#house{
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+.search-box{
+    width: 30%;
+    margin-right: 0.5%;
+    display: flex;
+}
+
+#search{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    position: relative;
+    left: 55px;
+    top: 10px;
+}
+
+#search-input{
+    height: 50px;
+    width: 600px;
+    margin-left: 0.5px;
+    padding-left: 60px;
+    border-radius: 2px;
+    border-width: 3px;
+    font-size: 20px;
+    color: black;
+}
+
+.product{
+    width: 100%;
+    height: 50%;
+}
+
+#foryou{
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.fyp{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.fyp-b{
+    width: 20%;
+    height: 50%;
+    border-style: solid;
+    border-color: #ccc; 
+    border-width: 3px;
+    margin-left: 10%;
+}
+
+#fyp-1p{
+   width: 90%;
+   margin-left: 16.5px;
+   margin-top: 15px;
+}
+
+.fyp-1t{
+    margin-left: 3%;
+    font-size: 23px;
+}
+
+#sell1{
+    margin-left: 190px;
+}
+
+#fyp-2p{
+    width: 93.5%;
+    margin-left: 11px;
+    margin-top: 11px;
+ }
+
+.fyp-2t{
+    margin-left: 3%;
+    font-size: 23px;
+}
+
+#sell2{
+    margin-left: 190px;
+}
+
+.list{
+    width: 100%;
+    height: 20%;
+    margin-top: 1.5%;
+    border-style: solid;
+    border-color: #ccc;
+    border-right: none; /* 移除右边框 */
+    border-bottom: none; /* 移除下边框 */
+    border-left: none; /* 移除左边框 */
+    border-width: 3px;
+    display: flex;
+    justify-content: space-between; /* 让子元素尽可能地平均分配，使它们之间有空白 */
+    align-items: center; /* 垂直居中子元素 */
+}
+
+#list-p{
+    width: 60px;
+    height: 60px;
+    margin-top: 1.2%;
+    margin-left: 1.5%;
+}
+
+#car{
+    width: 130px;
+    height: 60px;
+    font-size: 25px;
+    background-color: rgb(231, 115, 139);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 1.3%;
+    margin-left: 7%;
+}
+
+#my{
+    width: 130px;
+    height: 60px;
+    font-size: 25px;
+    background-color: rgb(231, 115, 139);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 1.3%;
+    margin-right: 5%;
+}
+
+
+.sliding-menu {
+    position: absolute;
+    top: 0;
+    left: -200px; /* 隐藏在左侧 */
+    width: 200px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: left 0.3s ease; /* 滑动动画 */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.sliding-menu ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 5px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    
+}
+
+.sliding-menu ul li {
+    margin: 0;
+}
+
+.sliding-menu.open {
+    left: 0; /* 滑出 */
+}
+
+.list-b{
+    display: flex;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-width: 3px;
+    height: 70px;
+}
+
+#hehehe{
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    bottom: 17px;
+    left: 7px;
+}
+
+#list-p2{
+    width: 60px;
+    height: 60px;
+    margin-left: 1.5%;
+}
+
+.subject{
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+
+.list-b::after {
+    content: ''; /* 添加伪元素 */
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 5px; /* 右边框宽度 */
+    background-color: #000; /* 右边框颜色 */
+}
+
+.sub-b{
+    display: flex;
+    padding-top: 15%;
+    padding-left: 8%;
+}
+
+#sub-p{
+    height: 50px;
+    width: 55px;
+    position: relative;
+    bottom: 8px;
+    right: 6px;
+}
