@@ -6,6 +6,11 @@
     align-items: center; /* 垂直居中子元素 */
 }
 
+.icon-box{
+    display: flex;
+    width: 20%;
+}
+
 #house{
     height: 80px;
     width: 80px;
@@ -111,8 +116,6 @@
 #list-p{
     width: 60px;
     height: 60px;
-    margin-top: 1.2%;
-    margin-left: 1.5%;
 }
 
 #car{
@@ -127,7 +130,7 @@
     margin-left: 7%;
 }
 
-#my{
+#mine{
     width: 130px;
     height: 60px;
     font-size: 25px;
