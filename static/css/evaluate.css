@@ -1,10 +1,28 @@
 .one{
     font-size: 50px;
+    white-space: nowrap;
+    margin-right: 1500px;
+    margin-top: 20px;
 }
-
+.two{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.back{
+    width: 150px;
+    height:150px;
+    margin-right: 10px;
+}
+.fyp2{
+    width: 200px;
+    height: 250px;
+}
 .three{
-    margin-left: 200px;
+    margin-left: 100px;
     margin-bottom: 150px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .three1{
@@ -14,10 +32,18 @@
 .three2{
     font-size: 25px;
 }
+.three3{
+    margin-left: 200px;
+}
+.three4{
+    margin-right: 1400px;
+    margin-top: 20px;
+}
 
 .header{
     height: 300px;
-
+    display: flex;
+    justify-content: space-between;     
 }
 
 .four{
