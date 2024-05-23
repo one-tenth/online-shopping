@@ -9,7 +9,7 @@ from mysite.models import Product
 #登入
 def logins(request):
     if request.user.is_active:  # 確認用戶是否已經登入
-        return redirect('product')
+        return redirect('home')
     msg = ''
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -18,7 +18,7 @@ def logins(request):
         
         if user is not None:
             login(request, user)  # 登入用戶
-            return redirect('/')  # 登入成功後重定向到首頁
+            return redirect('home')  # 登入成功後重定向到首頁
         else:
             msg = '帳號或密碼錯誤'  # 設定錯誤訊息
             return render(request, 'login.html', {'msg': msg})  # 將錯誤訊息傳遞給模板
@@ -59,3 +59,7 @@ def jewelry(request):
     return render(request,"jewelry.html")
 def shoe(request):
     return render(request,"shoe.html")
+def shopcar(request):
+    return render(request,"shopcar.html")
+def register(request):
+    return render(request,"register.html")

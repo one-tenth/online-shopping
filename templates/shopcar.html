@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/shopcar.css' %}">
+    <script src="shopcar.js"></script> 
+    <title>購物車</title>
+</head>
+<body>
+    <div class="top">
+        <img id="back" src="{% static 'images/back.png' %}" alt="">
+        <p id="tt">購物車</p>
+    </div>
+    <div class="product">
+        <div class="pro1">
+            <tr>
+                <input class="check" type="checkbox" name="item1"  onchange="calculateTotal(); checkAllSelected()">
+                <img class="fyp" src="{% static 'images/fyp1.png' %}" alt="">
+                <div class="shp-t">
+                    <p class="pn">V領針織上衣</p>
+                    <p class="pc">灰色/XS</p>
+                    <p class="pp">$399</p>
+                    <div class="quantity-container">
+                        <button type="button" onclick="changeQuantity('quantity1', -1)">-</button>
+                        <input type="number" class="quantity" id="quantity1" name="quantity1" min="0" max="100" value="0" onchange="calculateTotal()">
+                        <button type="button" onclick="changeQuantity('quantity1', 1)">+</button>
+                    </div>
+                </div>
+            </tr>
+        </div>
+        <div class="pro1">
+            <tr>
+                <input class="check" type="checkbox" name="item1"  onchange="calculateTotal(); checkAllSelected()">
+                <img class="fyp" src="{% static 'images/fyp2.png' %}" alt="">
+                <div class="shp-t">
+                    <p class="pn">針織吊帶</p>
+                    <p class="pc">灰色/XS</p>
+                    <p class="pp">$399</p>
+                    <div class="quantity-container">
+                        <button type="button" onclick="changeQuantity('quantity2', -1)">-</button>
+                        <input type="number" class="quantity" id="quantity2" name="quantity2" min="0" max="100" value="0" onchange="calculateTotal()">
+                        <button type="button" onclick="changeQuantity('quantity2', 1)">+</button>
+                    </div>
+                </div>
+            </tr>
+        </div>
+        <div class="pro1">
+            <tr>
+                <input class="check" type="checkbox" name="item1"  onchange="calculateTotal(); checkAllSelected()">
+                <img class="fyp" src="{% static 'images/fyp2.png' %}" alt="">
+                <div class="shp-t">
+                    <p class="pn">針織吊帶</p>
+                    <p class="pc">灰色/XS</p>
+                    <p class="pp">$399</p>
+                    <div class="quantity-container">
+                        <button type="button" onclick="changeQuantity('quantity3', -1)">-</button>
+                        <input type="number" class="quantity" id="quantity3" name="quantity3" min="0" max="100" value="0" onchange="calculateTotal()">
+                        <button type="button" onclick="changeQuantity('quantity3', 1)">+</button>
+                    </div>
+                </div>
+            </tr>
+        </div>
+        <div class="bottom">
+            <div class="trash-b" onclick="resetCart()">
+                <img id="trash" src="images/trash.png" alt="">
+                <p id="trash-t">清空購物車</p>
+            </div>
+            <div class="all-b">
+                <input id="check-all" type="checkbox" name="itemAll" onclick="toggleAll(this)">
+                <p id="all-t">全選</p>
+            </div>
+            <div class="tot-b">
+                <p id="tot-t">總金額$0</p>
+                <button type="button" id="tot-bu">結帳</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

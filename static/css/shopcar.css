@@ -1,0 +1,146 @@
+.top{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.back{
+    width: 80px;
+    height: 80px;
+}
+
+#tt{
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 41%;
+    margin-top: 0;
+}
+
+.product{
+    width: 100%;
+    height: 50%;
+    margin-top: 1.5%;
+}
+
+.pro1{
+    display: flex;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.fyp{
+    width: 15%;
+    height: 15%;
+}
+
+.check{
+    transform: scale(1.5);
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+}
+
+.pn{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.pc{
+    font-size: 20px;
+}
+
+.pp{
+    font-size: 20px;
+    color: rgb(49, 85, 229);
+}
+
+.shp-t{
+    margin-left: 1.5%;
+}
+
+.bottom{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    border-style:solid;
+    border-width: 5px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    background-color: white;
+}
+
+.trash-b{
+    display: flex;
+    margin-top: 1%;
+    margin-left: 3%;
+}
+
+#trash{
+    width: 65px;
+    height: 65px;
+}
+
+#trash-t{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.all-b{
+    display: flex;
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+#check-all{
+    transform: scale(1.5);
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+}
+
+#all-t{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.tot-b{
+    border-style: solid;
+    border-width: 3.5px;
+    width: 20%;
+    margin-left: 46.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tot-t{
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+#tot-bu{
+    width: 120px;
+    height: 50px;
+    font-size: 23px;
+    background-color: rgb(231, 115, 139);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 1.3%;
+    margin-right: 5%;
+}

@@ -31,4 +31,6 @@ urlpatterns = [
     path('child/',mv.child,name="child"),
     path('jewelry/',mv.jewelry,name="jewelry"),
     path('shoe/',mv.shoe,name="shoe"),
+    path('shopcar/',mv.shopcar,name="shopcar"),
+    path('register/',mv.register,name="register")
 ]
