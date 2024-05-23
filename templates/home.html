@@ -15,10 +15,13 @@
             </a>
             <img id="list-p" src="{% static 'images/list-p.png' %}" alt="">
         </div>
-        <div class="search-box">
-            <img id="search" src="{% static 'images/search.png' %}" alt="">
-            <input type="text" id="search-input" placeholder="請輸入關鍵字 例:短袖女裝">
-        </div>
+        <form methon="POST" action="/search/"> 
+            <div class="search-box">
+                <img id="search" src="{% static 'images/search.png' %}" alt="">
+                <input type="text" id="site-search" name="q" placeholder="請輸入關鍵字 例:短袖女裝">
+                <button type="submit" style="font-family:微軟正黑體;font-weight:bolder;font-size:22pt;">&#x1F50E;</button></p>
+            </div>
+        </form>
     </div>
 
     <div class="product">
@@ -53,7 +56,7 @@
 
     <div class="list">
         <a href="{% url 'mine' %}"><button id="mine">我的</button></a>
-        <a href="{% url 'car' %}"><button id="car">購物車</button></a>
+        <a href="{% url 'shopcar' %}"><button id="car">購物車</button></a>
         
     </div>
 

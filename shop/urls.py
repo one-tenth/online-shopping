@@ -25,7 +25,6 @@ urlpatterns = [
     path("product/", mv.product, name="product"),
     path('home/',mv.home,name="home"),
     path('mine/',mv.mine,name="mine"),
-    path('car/',mv.car,name="car"),
     path('man/',mv.man,name="man"),
     path('girl/',mv.girl,name="girl"),
     path('child/',mv.child,name="child"),
@@ -34,4 +33,5 @@ urlpatterns = [
     path('shopcar/',mv.shopcar,name="shopcar"),
     path('register/',mv.register,name="register"),
     path('order/',mv.order,name="order"),
+    path('search/',mv.search,name="search"),
 ]

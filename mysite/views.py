@@ -32,23 +32,21 @@ def logout(request):
     return redirect('/')
 
 #搜尋
-'''
 def search(request):
     kw = request.GET.get('q')#抓表單的東西(看你header的名字)
-    product = product.objects.filter(title__icontains=kw)#title__icontains相似查詢
+    products = product.objects.filter(title__icontains=kw)#title__icontains相似查詢
     return render(request, 'search.html', {'product': product, 'keyWord': kw})
-'''
+
 
 def evaluate(request):
     return render(request,'evaluate.html')
 def product(request):
-    return render(request, "product.html")
+    products = Product.objects.all()
+    return render(request, "product.html", {'products': products})
 def home(request):
     return render(request, "home.html") 
 def mine(request):
     return render(request, "mine.html") 
-def car(request):
-    return render(request, "car.html") 
 def man(request):
     return render(request, "man.html") 
 def girl(request):
