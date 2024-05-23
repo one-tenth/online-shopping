@@ -18,9 +18,9 @@
                 placeholder="出生年  :  y  /  m  /  d" required><br><br>
             <form class="gen">
                 <label for="gender" class="gender">性別 ：</label>
-                <input type="radio" class="male" name="male" value="male">
+                <input type="radio" class="male" name="gender" value="male">
                 <label for="male" class="man">男</label>
-                <input type="radio" class="female" name="female" value="female">
+                <input type="radio" class="female" name="gender" value="female">
                 <label for="female" class="woman">女</label>
             </form><br><br>
             <input type="tel" class="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
@@ -31,7 +31,9 @@
         <input type="password" class="confirm_password" name="confirm_password" placeholder="確認密碼  :" required><br><br>
     </div>
     <!-- 註冊按鈕 -->
+    <a href="{%url 'home'%}">
     <input type="submit" name="submit" class="submit" value="註冊"><br><br>
+    <a/>
 </body>
 
 </html>

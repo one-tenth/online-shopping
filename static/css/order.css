@@ -1,0 +1,141 @@
+.fa-arrow-circle-o-left {
+    font-size: 75px;
+    /* 設置圖標的大小 */
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+.one {
+    display: flex;
+}
+
+.two {
+    font-size: 50px;
+    margin-top: 1%;
+    margin-left: 2%;
+    white-space: nowrap;
+}
+
+.three {
+    height: 40%;
+    background-color: #f1f1f1;
+}
+
+.three-1 {
+    font-size: 40px;
+    margin-left: 5%;
+    padding-top: 3%;
+}
+
+.three-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.three-21,
+.three-31 {
+    font-size: 45px;
+    margin-bottom: 0;
+    width: 250%;
+}
+
+.three-22,
+.three-32 {
+    font-size: 30px;
+    width: 150%;
+    margin-bottom: 0;
+}
+
+.three-23,
+.three-33 {
+    color: blue;
+    font-size: 30px;
+    margin-left: 120%;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.three-24,
+.three-34 {
+    font-size: 30px;
+    margin-left: 120%;
+    width: 100%;
+}
+
+.three-3 {
+    margin-top: 5%;
+    /* margin-left: 325px; */
+    display: flex;
+}
+
+.xxx {
+    display: flex;
+}
+
+.four {
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.four-1,
+.four-4 {
+    font-size: 35px;
+}
+
+.four-2,
+.four-3 {
+    font-size: 25px;
+}
+
+.five {
+    background-color: #f9aeae;
+    width: 12%;
+    height: 3%;
+    margin-left: 400%;
+    border-radius: 80px;
+    display: flex;
+}
+
+.five-1,
+.five-2 {
+    font-size: 30px;
+    margin-left: 5%;
+    margin-top: 10%;
+    white-space: nowrap; /*字不換行*/
+}
+
+.five-2 {
+    margin-top: 13%;
+    color: #ff0000;
+}
+
+.six {
+    display: flex;
+}
+
+.six-1 {
+    background-color: #f9aeae;
+    width: 125%;
+    height: 100%;
+    margin-left: 400%;
+    border-radius: 80px;
+    font-size: 45px;
+    border: none;
+}
+
+.zzz {
+    margin-left: 5%;
+}
+
+img {
+    margin-right: 5%;
+}
+
+.p1{
+    width: 150px;
+
+}
+
+.p2{
+    width: 100%;
+}

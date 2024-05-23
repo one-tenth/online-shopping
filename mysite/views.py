@@ -63,3 +63,5 @@ def shopcar(request):
     return render(request,"shopcar.html")
 def register(request):
     return render(request,"register.html")
+def order(request):
+    return render(request,"order.html")

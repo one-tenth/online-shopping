@@ -10,7 +10,7 @@ class Member(AbstractUser):
 
     def __str__(self):#看你要顯示啥 所以有可能是他的錯
         return  str(self.id)
-    
+
 #產品資料
 class Product(models.Model):
     name = models.CharField(max_length=100)

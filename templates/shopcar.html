@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="top">
-        <img id="back" src="{% static 'images/back.png' %}" alt="">
+        <img class="back" src="{% static 'images/back.png' %}" alt="">
         <p id="tt">購物車</p>
     </div>
     <div class="product">
@@ -64,7 +64,7 @@
         </div>
         <div class="bottom">
             <div class="trash-b" onclick="resetCart()">
-                <img id="trash" src="images/trash.png" alt="">
+                <img class="trash" src="{% static 'images/trash.png' %}" alt="">
                 <p id="trash-t">清空購物車</p>
             </div>
             <div class="all-b">

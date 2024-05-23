@@ -32,5 +32,6 @@ urlpatterns = [
     path('jewelry/',mv.jewelry,name="jewelry"),
     path('shoe/',mv.shoe,name="shoe"),
     path('shopcar/',mv.shopcar,name="shopcar"),
-    path('register/',mv.register,name="register")
+    path('register/',mv.register,name="register"),
+    path('order/',mv.order,name="order"),
 ]

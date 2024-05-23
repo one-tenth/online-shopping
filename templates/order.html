@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+</head>
+
+
+<body>
+    <div class="one">
+        <a href="{% url 'home' %}">
+        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+        <a/>
+        <p class="two">我的訂單</p>
+    </div>
+    <div class="three">
+        <p class="three-1">#N0321 待出貨</p>
+        <div class="xxx">
+            <div class="zzz">
+                <div class="three-2">
+                    <img id="p1" src="{% static 'images/image.png' %}" alt="">
+                    <div>
+                        <p class="three-21">V領針織上衣</p>
+                        <p class="three-22">灰色/ XS</p>
+                        <p class="three-23">NT $290</p>
+                        <p class="three-24">X 1</p>
+                    </div>
+
+                </div>
+                <div class="three-3">
+                    <img id="p2" src="{% static 'images/image2.png' %}" alt="">
+                    <div>
+                        <p class="three-31">針織吊帶</p>
+                        <p class="three-32">灰色/ XS</p>
+                        <p class="three-33">NT $399</p>
+                        <p class="three-34">X 2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="four">
+                <p class="four-1">寄送方式:超商取貨</p>
+                <p class="four-2">7-11 鑫杭門市</p>
+                <p class="four-3">杭州南路一段23號</p>
+                <p class="four-4">付款方式 : 貨到付款</p>
+            </div>
+        </div>
+        <div class="six">
+            <div class="five">
+                <p class="five-1">總金額 :</p>
+                <p class="five-2"> $ 689</p>
+            </div>
+            <div>
+                <a href="{%url 'home'%}">
+                <input class="six-1" type="button" value="取消訂單">
+                <a/>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
