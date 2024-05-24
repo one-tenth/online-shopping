@@ -34,7 +34,7 @@ def logout(request):
 #搜尋
 def search(request):
     kw = request.GET.get('q')#抓表單的東西(看你header的名字)
-    products = product.objects.filter(title__icontains=kw)#title__icontains相似查詢
+    products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
     return render(request, 'search.html', {'product': product, 'keyWord': kw})
 
 
