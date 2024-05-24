@@ -59,7 +59,7 @@ def product(request):
     return render(request, "product.html", {'products': products})
 
 def home(request):
-    items = Product.objects.values('name', 'image','price','quantity')  # 提取 'title' 和 'description' 欄位
+    items = Product.objects.all()
     return render(request, 'home.html', {'items': items}) 
 
 def mine(request):

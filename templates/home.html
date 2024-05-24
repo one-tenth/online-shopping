@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <script src="{% static 'js/main.js' %}"></script> 
+    <title>Home</title>
 </head>
 <body>
     <div class="top">
@@ -15,11 +16,11 @@
             </a>
             <img id="list-p" src="{% static 'images/list-p.png' %}" alt="">
         </div>
-        <form methon="POST" action="/search/"> 
+        <form method="POST" action="/search/"> 
             <div class="search-box">
                 <img id="search" src="{% static 'images/search.png' %}" alt="">
                 <input type="text" id="site-search" name="q" placeholder="請輸入關鍵字 例:短袖女裝">
-                <button type="submit" style="font-family:微軟正黑體;font-weight:bolder;font-size:22pt;">&#x1F50E;</button></p>
+                <button type="submit" style="font-family:微軟正黑體;font-weight:bolder;font-size:22pt;">&#x1F50E;</button>
             </div>
         </form>
     </div>
@@ -27,39 +28,28 @@
     <div class="product">
         <p id="foryou">為您推薦</p>
         <div class="fyp">
-            <div class="fyp-b">
-                <img id="fyp-1p" src="{% static 'images/fyp1.png' %}" alt="">
-                <div class="fyp-1t">
-                    <p>V領針織上衣</p>
-                    <p>NT $ 650</p>
-                    <p id="sell1">已售 3,200</p>
+            {% for item in items %}
+                <div class="fyp-b">
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                    <div class="fyp-1t">
+                        <p>{{ item.name }}</p>
+                        <p>NT $ {{ item.price }}</p>
+                        <p id="sell{{ forloop.counter }}">已售 {{ item.quantity }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="fyp-b">
-                <img id="fyp-2p" src="{% static 'images/fyp2.png' %}" alt="">
-                <div class="fyp-2t">
-                    <p>針織吊帶</p>
-                    <p>NT $ 300</p>
-                    <p id="sell2">已售 3,200</p>
-                </div>
-            </div>
-            <div class="fyp-b">
-                <img id="fyp-2p" src="{% static 'images/fyp3.png' %}" alt="">
-                <div class="fyp-2t">
-                    <p>毛衣背心</p>
-                    <p>NT $ 400</p>
-                    <p id="sell2">已售 3,200</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
+    
 
     <div class="list">
         <a href="{% url 'mine' %}"><button id="mine">我的</button></a>
-        <a href="{% url 'logout' %}"  class="list-group-item">登出</a>
+        <a href="{% url 'logout' %}" class="list-group-item">登出</a>
         <a href="{% url 'shopcar' %}"><button id="car">購物車</button></a>
-        
-        
     </div>
 
     <!-- 滑出列表 -->
@@ -69,26 +59,26 @@
             <p id="hehehe">分類</p>
         </div>
         <ul>
-        <div class="sub-b">
-            <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-            <a href="{% url 'man' %}"><li class="subject">男裝</li></a>
-        </div>
-        <div class="sub-b">
-            <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-            <a href="{% url 'girl' %}"><li class="subject">女裝</li></a>
-        </div>
-        <div class="sub-b">
-            <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-            <a href="{% url 'child' %}"><li class="subject">童裝</li></a>
-        </div>
-        <div class="sub-b">
-            <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-            <a href="{% url 'jewelry' %}"><li class="subject">首飾</li></a>
-        </div>
-        <div class="sub-b">
-            <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-            <a href="{% url 'shoe' %}"><li class="subject">鞋子</li></a>
-        </div>
+            <div class="sub-b">
+                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                <a href="{% url 'man' %}"><li class="subject">男裝</li></a>
+            </div>
+            <div class="sub-b">
+                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                <a href="{% url 'girl' %}"><li class="subject">女裝</li></a>
+            </div>
+            <div class="sub-b">
+                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                <a href="{% url 'child' %}"><li class="subject">童裝</li></a>
+            </div>
+            <div class="sub-b">
+                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                <a href="{% url 'jewelry' %}"><li class="subject">首飾</li></a>
+            </div>
+            <div class="sub-b">
+                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                <a href="{% url 'shoe' %}"><li class="subject">鞋子</li></a>
+            </div>
         </ul>
     </div>
 </body>
