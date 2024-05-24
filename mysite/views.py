@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from mysite.models import Product
+from mysite.forms import UserRegisterForm
 #登入
 def logins(request):
     if request.user.is_active:  # 確認用戶是否已經登入
@@ -37,7 +38,20 @@ def search(request):
     products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
     return render(request, 'search.html', {'product': product, 'keyWord': kw})
 
+#註冊
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            login(request, user)
+            return redirect('/')
+    else:
+        form = UserRegisterForm()
 
+    return render(request, 'register.html', {'form': form})
 def evaluate(request):
     return render(request,'evaluate.html')
 def product(request):
@@ -59,7 +73,5 @@ def shoe(request):
     return render(request,"shoe.html")
 def shopcar(request):
     return render(request,"shopcar.html")
-def register(request):
-    return render(request,"register.html")
 def order(request):
     return render(request,"order.html")

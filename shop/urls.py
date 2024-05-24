@@ -19,11 +19,11 @@ from mysite import views as mv
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('',mv.home,name="home"),
     path('login/', mv.logins, name = "login"),
     ##path('login/', mv.login_view, name='login'),
     path('evaluate/', mv.evaluate, name = "evaluate"),
     path("product/", mv.product, name="product"),
-    path('home/',mv.home,name="home"),
     path('mine/',mv.mine,name="mine"),
     path('man/',mv.man,name="man"),
     path('girl/',mv.girl,name="girl"),

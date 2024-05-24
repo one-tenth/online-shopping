@@ -13,15 +13,15 @@
     <h1 class="title">會員註冊</h1>
     <div class="all">
         <form class="radius" action="/submit/" method="post">
-            <input type="text" class="name" name="name" placeholder="姓名  :  XXX" required><br><br>
+            <input type="text" class="name" name="name" placeholder="帳號名  :  XXX" required><br><br>
             <input type="text" class="birth-year" name="birth-year" name="birth_year"
-                placeholder="出生年  :  y  /  m  /  d" required><br><br>
+                placeholder="出生年  :  yyyy  /  mm  /  dd" required><br><br>
             <form class="gen">
                 <label for="gender" class="gender">性別 ：</label>
-                <input type="radio" class="male" name="gender" value="male">
-                <label for="male" class="man">男</label>
-                <input type="radio" class="female" name="gender" value="female">
-                <label for="female" class="woman">女</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br><br>
             </form><br><br>
             <input type="tel" class="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
                 placeholder="電話  : 09xx - xxx - xxx" required><br><br>
@@ -31,9 +31,11 @@
         <input type="password" class="confirm_password" name="confirm_password" placeholder="確認密碼  :" required><br><br>
     </div>
     <!-- 註冊按鈕 -->
-    <a href="{%url 'home'%}">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
     <input type="submit" name="submit" class="submit" value="註冊"><br><br>
-    <a/>
+    <a/></from>
 </body>
 
 </html>
