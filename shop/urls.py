@@ -34,4 +34,5 @@ urlpatterns = [
     path('register/',mv.register,name="register"),
     path('order/',mv.order,name="order"),
     path('search/',mv.search,name="search"),
+    path('logout/',mv.logout,name='logout'),
 ]
