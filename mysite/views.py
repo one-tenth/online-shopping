@@ -57,8 +57,11 @@ def evaluate(request):
 def product(request):
     products = Product.objects.all()
     return render(request, "product.html", {'products': products})
+
 def home(request):
-    return render(request, "home.html") 
+    items = Product.objects.values('name', 'image','price','quantity')  # 提取 'title' 和 'description' 欄位
+    return render(request, 'myapp/home.html', {'items': items}) 
+
 def mine(request):
     return render(request, "mine.html") 
 def man(request):

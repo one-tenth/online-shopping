@@ -1,0 +1,250 @@
+body{
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.top{
+    width: 100%;
+    height: 15%; 
+}
+
+#top-t{
+   font-size: 39px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   margin-top: 0;
+}
+
+.pro{
+    width: 60%;
+    height: 35%;
+    background-color: #e3e3e3;
+    margin-left: 0;
+    display: flex;
+}
+
+.pro-pb{
+    width: 25%;
+    height: 25%;
+    margin-top: 0.8%;
+    margin-left: 3.5%;
+}
+
+.pro-tb{
+    width: 100%;
+}
+
+.pro-t1{
+    margin-left: 3%;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.pro-t2{
+    margin-left: 3%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.pro-t3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 89%;
+    margin-top: 13%;
+}
+
+.trans-1{
+    width: 23%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+}
+
+.trans-tb{
+    margin-left: 3%;
+}
+
+.trans-t1{
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.trans-t2{
+    font-size: 20px;
+ }
+
+.trans-t3{
+    font-size: 20px;
+ }
+
+ .trans-pb{
+    margin-left: 32%;
+    margin-top: 18.5%;
+}
+
+#trans-p{
+    width: 35px;
+    height: 35px;
+}
+
+#trans-2p{
+    width: 35px;
+    height: 35px;
+}
+
+.trans-2{
+    width: 23%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+}
+
+.trans-2tb{
+    margin-left: 3%;
+}
+
+.trans-2t{
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.trans-2pb{
+    margin-left: 32%;
+    margin-top: 5.2%;
+}
+
+.bottom{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    margin-top: 5%;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(33, 33, 83);
+    border-width: 5px;
+    box-sizing: border-box;
+}
+
+.tot-tb{
+    width: 20%;
+    border-style: solid;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    border-color: rgb(33, 33, 83);
+    border-width: 5px;
+    box-sizing: border-box;
+    margin-left: 78%;
+}
+
+.tot-t{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.pay-b{
+    width: 170px;
+    height: 80px;
+    font-size: 23px;
+    padding-bottom: 3%;
+    padding-left: 6%;
+    background-color: rgb(56, 122, 56);
+    color: rgb(187, 255, 187);
+    border-style: solid;
+    border-bottom: none;
+    border-top: none;
+    border-color: rgb(33, 33, 83);
+    border-width: 5px;
+    box-sizing: border-box;
+}
+
+.pay-p{
+    width: 30px;
+    height: 30px;
+    margin-left:0;
+    position: relative;
+    top:1.5%
+}
+
+/* 浮动视窗的背景 */
+.modal1 {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 保证在最前面 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 允许滚动 */
+    background-color: rgba(0, 0, 0, 0); /* 背景透明 */
+    transition: opacity 0.3s ease; /* 添加平滑过渡 */
+}
+
+/* 浮动视窗内容 */
+.modal-content1 {
+    background-color: #fefefe;
+    margin: 15% auto; /* 中间对齐 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* 宽度 */
+    height: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* 关闭按钮 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 浮动视窗的背景 */
+.modal2 {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 保证在最前面 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 允许滚动 */
+    background-color: rgba(0, 0, 0, 0); /* 背景透明 */
+    transition: opacity 0.3s ease; /* 添加平滑过渡 */
+}
+
+/* 浮动视窗内容 */
+.modal-content2 {
+    background-color: #fefefe;
+    margin: 15% auto; /* 中间对齐 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* 宽度 */
+    height: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 20px;
+    font-weight: bold;
+}

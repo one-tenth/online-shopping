@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pay.css">
+    <script src="pay.js"></script> 
+    <title>結帳</title>
+</head>
+<body>
+    <div class="top">
+        <p id="top-t">結帳</p>
+    </div>
+    <div class="pro">
+        <div class="pro-pb">
+            <img src="images/fyp1.png" alt="">
+        </div>
+        <div class="pro-tb">
+            <p class="pro-t1">V領針織上衣</p>
+            <p class="pro-t2">灰色/XS</p>
+            <p class="pro-t3">數量:1</p>
+        </div>
+    </div>
+    <div class="trans-1">
+        <div class="trans-tb">
+            <p class="trans-t1">寄送方式:超商取貨</p>
+            <p class="trans-t2">7-11鑫杭門市</p>
+            <p class="trans-t3">杭州南路一段23號</p>
+        </div>
+        <div class="trans-pb">
+            <img id="trans-p" src="images/point.png" alt="">
+        </div>
+    </div>
+    <div class="trans-2">
+        <div class="trans-2tb">
+            <p class="trans-2t">付款方式:貨到付款</p>
+        </div>
+        <div class="trans-2pb">
+            <img id="trans-2p" src="images/point.png" alt="">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="tot-tb">
+            <p class="tot-t">總付款金額$399</p>
+        </div>
+        <div class="pay-bb">
+            <button class="pay-b">確認結帳
+                <img class="pay-p" src="images/money.png" alt="">
+            </button>
+        </div>
+    </div>
+    <div id="myModal1" class="modal1">
+        <!-- 浮动视窗内容 -->
+        <div class="modal-content1">
+            <span class="close">&times;</span>
+            <input type="radio" id="option1" name="option" value="宅配到家" onclick="updateShippingMethod('宅配到家')">
+            <label for="option1">宅配到家</label><br>
+            <input type="radio" id="option2" name="option" value="超商取貨" onclick="updateShippingMethod('超商取貨')">
+            <label for="option2">超商取貨</label><br>
+        </div>
+    </div>
+    
+    <div id="myModal2" class="modal2">
+        <!-- 浮动视窗内容 -->
+        <div class="modal-content2">
+            <span class="close">&times;</span>
+            <input type="radio" id="option3" name="option" value="貨到付款" onclick="updatePaymentMethod('貨到付款')">
+            <label for="option3">貨到付款</label><br>
+            <input type="radio" id="option4" name="option" value="線上付款" onclick="updatePaymentMethod('線上付款')">
+            <label for="option4">線上付款</label><br>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>
