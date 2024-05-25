@@ -1,49 +1,73 @@
-/* 整體長怎樣 */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-}
-/*標題*/
 .title {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 24px;
-    color: #333;
-}
-/*裡面內容*/
-.all {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-/*表單樣式*/
-.radius {
-    display: flex;
-    flex-direction: column;
-}
-/*表單輸入*/
-.radius input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-/*下面兩個感覺是按鈕???*/
-.submit {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    margin-left: 47%;
+    margin-bottom: 5%;
+    font-size: 50px;
 }
 
-.submit:hover {    /**/
-    background-color: #45a049;
+.all {
+    margin-left: 4%;
+}
+
+.password,
+.confirm_password {
+    width: 600px;
+    height: 50px;
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    margin-bottom: 2%;
+}
+
+
+.phone,
+.email {
+    width: 550px;
+    height: 50px;
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    margin-bottom: 2%;
+}
+::placeholder{
+    font-size: 25px;
+    color: black;
+}
+
+.name,
+.birth-year {
+    width: 300px;
+    height: 50px;
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    margin-bottom: 2%;
+}
+.submit{
+    position: absolute;
+    margin-left: 70%;
+    margin-top: -130px;
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    background-color: #ffffff;
+    border-color: rgb(12, 12, 173);
+    border-width: 7px;
+}
+
+.man, .woman{
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 80px;
+}
+
+.male, .female{
+    transform: scale(1.25);
+    margin-left: 30px;
+}
+
+.gender{
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 100px;
+
 }

@@ -1,6 +1,6 @@
 from django import forms#表單推薦用這種寫法 ppt50幾頁
 from mysite import models
-from mysite.models import Comment
+from mysite.models import Comment,  Member
 
 # mysite/forms.py
 from django import forms
@@ -11,7 +11,8 @@ class UserRegisterForm(forms.ModelForm):
         model = Member
         fields = ['username', 'email', 'password', 'borndate', 'gender', 'phoneNum']
         widgets = {
-            'password': forms.PasswordInput(),
+            # 'password': forms.PasswordInput(),
+            'username':forms.TextInput(attrs={'class':'form-control'}),
         }
 
     password_confirm = forms.CharField(label='確認密碼', widget=forms.PasswordInput)
