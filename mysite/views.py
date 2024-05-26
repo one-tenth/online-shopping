@@ -34,7 +34,7 @@ def logins(request):
 def logout(request):
     auth.logout(request)
     message = f'成功登出'
-    return redirect('/')
+    return redirect('login')
 
 #搜尋
 def search(request):
