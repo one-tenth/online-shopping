@@ -22,8 +22,8 @@
         <input class="password" class="search" name="password" type="text" placeholder="密碼:">
     </div>-->
 
-    <form action="/login/" method="post"><!--多這個 action裡面的是urls裡面的name method都是post-->
-        {% csrf_token %}<!--要記得加這行 然後下面的欄位都要有name這樣才可以抓 如果有按鈕那些的 就都要包在form裡面-->
+    <form action="/login/" method="post">
+        {% csrf_token %}
         <div class="input">
             <input class="username" class="search" name = "username" type="text" placeholder="帳號:1234567@gmail.com">
             <input class="password" class="search" name = "password" type="password" placeholder="密碼:">

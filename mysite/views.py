@@ -41,18 +41,37 @@ def search(request):
     return render(request, 'search.html', {'product': product, 'keyWord': kw})
 
 #註冊
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             user = form.save(commit=False)
-#             user.set_password(form.cleaned_data['password'])
-#             user.save()#存到資料庫
-#             login(request, user)
-#             return redirect('/')
-#     else:
-#         form = UserRegisterForm()
-#         return render(request, 'register.html', {'form': form})
+def register(request):
+    if request.method == 'POST':
+        # 從 POST 請求中獲取表單數據
+        name = request.POST.get('name')
+        borndate = request.POST.get('borndate')
+        gender = request.POST.get('gender')
+        gender = 'M' if gender == 'male' else 'W'
+        phoneNum = request.POST.get('phoneNum')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        
+        # 檢查密碼是否一致
+        if password != confirm_password:
+            return render(request, 'register.html', {'error': '密碼與確認密碼不一致'})
+        
+        # 創建會員對象並保存到資料庫中
+        member = Member.objects.create(
+            username=name,
+            borndate=borndate,
+            gender=gender,
+            phoneNum=phoneNum,
+            email=email,
+            password=password
+        )
+        
+        # 重定向到註冊成功頁面或其他適當的頁面
+        return redirect('/')
+    else:
+        # 如果不是 POST 請求，返回空的註冊表單
+        return render(request, 'register.html')
 
 def evaluate(request):
     return render(request,'evaluate.html')
@@ -85,35 +104,4 @@ def order(request):
 from django.shortcuts import render, redirect
 from .models import Member
 
-def register(request):
-    if request.method == 'POST':
-        # 從 POST 請求中獲取表單數據
-        name = request.POST.get('name')
-        borndate = request.POST.get('borndate')
-        gender = request.POST.get('gender')
-        gender = 'M' if gender == 'male' else 'W'
-        phoneNum = request.POST.get('phoneNum')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
-        
-        # 檢查密碼是否一致
-        if password != confirm_password:
-            return render(request, 'register.html', {'error': '密碼與確認密碼不一致'})
-        
-        # 創建會員對象並保存到資料庫中
-        member = Member.objects.create(
-            username=name,
-            borndate=borndate,
-            gender=gender,
-            phoneNum=phoneNum,
-            # email=email,
-            # password=password
-        )
-        
-        # 重定向到註冊成功頁面或其他適當的頁面
-        return redirect('/')
-    else:
-        # 如果不是 POST 請求，返回空的註冊表單
-        return render(request, 'register.html')
 
