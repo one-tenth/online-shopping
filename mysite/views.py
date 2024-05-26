@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from mysite.models import Product
 from mysite.forms import UserRegisterForm
+from django.shortcuts import render, redirect
+from .models import Member
 from django.contrib.auth.hashers import make_password
 
 #登入
@@ -101,7 +103,6 @@ def order(request):
     return render(request,"order.html")
 
 
-from django.shortcuts import render, redirect
-from .models import Member
+
 
 
