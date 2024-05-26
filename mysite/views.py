@@ -58,7 +58,7 @@ def register(request):
             return render(request, 'register.html', {'error': '密碼與確認密碼不一致'})
         
         # 創建會員對象並保存到資料庫中
-        member = Member.objects.create(
+        member = Member.objects.create_user(
             username=name,
             borndate=borndate,
             gender=gender,
