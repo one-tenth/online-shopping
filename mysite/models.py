@@ -22,6 +22,7 @@ class Product(models.Model):
     color = models.CharField(max_length=20,default='商品顏色')
     description = models.TextField()
     quantity = models.IntegerField(default=0)
+    category = models.CharField(max_length=10,default="man")
 
     def __str__(self):
         return self.name

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={%static 'css/product.css'%}>
+</head>
+
+<body>
+    <div class="one">
+        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+        <div class="two">
+            <img src="{% static 'images/product1.png' %}" alt="">
+        </div>
+        <div class="three">
+            <img src="{% static 'images/product2.png' %}" width="30%" height="30%">
+            <p class="p0">杏色</p>
+            <div class="three-1">
+                <h1>喵喵服飾</h1>
+                <div class="three-2">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>台北市中正區</p>
+                </div>
+                <p class="p1">商品詳情</p>
+                <div class="three-3">
+                    <div class="three-4">
+                        <div class="three-3">
+                            <p>庫存:</p>
+                            <p>20</p>
+                        </div>
+                        <div class="three-3">
+                            <p>風格:</p>
+                            <p>運動風</p>
+                        </div>
+                        <div class="three-3">
+                            <p>材質:</p>
+                            <p>棉</p>
+                        </div>
+                        <div class="three-3">
+                            <p>界節:</p>
+                            <p>夏</p>
+                        </div>
+                    </div>
+
+                    <div class="tab">
+                        <p class="sizeeee">尺寸表</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>衣長</th>
+                                    <th>袖長</th>
+                                    <th>肩寬</th>
+                                    <th>胸圍</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="t">M</td>
+                                    <td>69</td>
+                                    <td>21</td>
+                                    <td>49</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>71</td>
+                                    <td>22</td>
+                                    <td>51</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>73</td>
+                                    <td>23</td>
+                                    <td>53</td>
+                                    <td>107</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="four">
+        <div class="four-1">
+            <p>藏藍色</p>
+            <img src="{% static 'images/product3.png' %}">
+        </div>
+        <div class="four-1">
+            <p>鐵灰色</p>
+            <img src="{% static 'images/product4.png' %}">
+        </div>
+        <div class="four-1">
+            <p>黑色</p>
+            <img src="{% static 'images/product5.png' %}">
+        </div>
+    </div>
+    <hr>
+    <div class="six">
+        <div class="five">
+            <p>大尺碼寬鬆T-shirt</p>
+        </div>
+        <b class="five-1">NT$389</b>
+        <span class="vertical-line"></span>
+    </div>
+    <div class="five-2">
+        <i class="fa fa-money" aria-hidden="true"></i>
+        <input type="button" class="five-3" value="直接購買">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <input type="button" class="five-4" value="加入購物車">
+    </div>
+    
+    </div>
+
+</body>
+
+</html>

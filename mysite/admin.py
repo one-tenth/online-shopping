@@ -7,7 +7,7 @@ class MemberAdmin(admin.ModelAdmin):
     list_display=['username','id','borndate','gender','phoneNum']#id是會員編號
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display=['id','name','image','quantity']
+    list_display=['id','name','image','quantity','category']
 
 class InventoryChangeAdmin(admin.ModelAdmin):
     list_display=['product_id','size','quantity','gender','timestamp']
