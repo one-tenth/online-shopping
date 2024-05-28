@@ -1,5 +1,5 @@
 .fa-arrow-circle-o-left {
-    font-size: 100px;
+    font-size: 50px;
     /* 設置圖標的大小 */
     margin-left: 1%;
     margin-top: 1%;
@@ -10,7 +10,7 @@
 }
 
 .two>img {
-    width: 130%;
+    width: 90%;
     margin-top: 10%;
     margin-left: 10%;
 }
@@ -22,8 +22,12 @@
     width: 40%;
 }
 
+.ex{
+    margin-left: -30%;
+}
+
 .three-1 {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .three-2 {
@@ -36,18 +40,19 @@
 .fa-map-marker {
     margin-top: 5%;
     margin-right: 2%;
-    font-size: 150%;
+    font-size: 125%;
 }
 
 h1 {
-    font-size: 300%;
-    margin-top: -10%;
+    font-size: 200%;
+    margin-top: -1%;
 }
 
 .p1 {
-    font-size: 300%;
-    margin-left: -20%;
+    font-size: 200%;
+    margin-left: -10%;
     margin-bottom: 30%;
+    margin-top: 2%;
 }
 
 .three-3 {
@@ -55,28 +60,30 @@ h1 {
 }
 
 .three-3 {
-    font-size: 150%;
-    margin-top: -20%;
+    font-size: 110%;
+    margin-top: -25%;
     margin-left: -5%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     margin-right: -20%;
 }
 
 .three-2>p {
-    font-size: 150%;
+    font-size: 105%;
+    margin-top: 5%;
 }
 
 .p0 {
     position: absolute;
-    font-size: 350%;
-    margin-left: -30%;
-    margin-top: -0.25%;
+    font-size: 200%;
+    margin-left: -39%;
+    margin-top: 1%;
 }
 
 .tab {
-    margin-left: 20%;
-    margin-right: -50%;
+    margin-left: 50%;
+    margin-right: -20%;
     font-size: 150%;
+    margin-top: -15%;
 }
 
 table {
@@ -88,7 +95,7 @@ table {
 th,
 td {
     border: 1px solid #000;
-    padding: 2%;
+    padding: 1%;
     /* 使用百分比设置内边距 */
     text-align: center;
 }
@@ -98,7 +105,7 @@ th {
 }
 
 .sizeeee {
-    margin-left: 3%;
+    margin-left: 5%;
     margin-bottom: -18%;
 }
 
@@ -106,29 +113,44 @@ th {
     display: flex;
     align-items: center;
     /* 垂直居中 */
-    margin: 5%;
-    margin-top: -27%;
-    margin-right: 10%;
+    margin: 1%;
+    margin-top: -10%;
+    margin-right: 2%;
 }
 
 .four-1 {
-    width: 10%;
+    width: 3%;
     /* 设置图片宽度 */
     height: auto;
     /* 保持图片的宽高比 */
-    margin-right: 1%;
-    margin-top: 10%;
-    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+.four-2{
+    display: flex;
+    justify-content: space-between;
+}
+.four-1 > img{
+    width: 200%;
+    padding-left: 200%;
+    margin-right: 100%;
+    margin-top: 120%;
+}
+
+.a{
+    margin-bottom: -50%;
 }
 
 .four-1>p {
-    margin-bottom: 0%;
-    font-size: 150%;
+    margin-bottom: -100%;
+    margin-left: 200%;
+    font-size: 50%;
 }
 
 hr {
-    margin-top: -3%;
-    border-top: 2px solid #000;
+    margin-top: 0%;
+    border-top: 1px solid #000;
 }
 
 .five>p {
@@ -137,16 +159,16 @@ hr {
 }
 
 .five {
-    width: 22%;
+    width: 20%;
     height: 20%;
-    font-size: 300%;
+    font-size: 150%;
     margin-left: 15%;
-    margin-top: -1%;
+    margin-top: -0.5%;
 }
 
 .five-1 {
-    font-size: 300%;
-    margin-top: 2%;
+    font-size: 250%;
+    margin-top: 1%;
     margin-left: 2%;
 }
 
@@ -158,50 +180,52 @@ hr {
     position: absolute;
     top: 0;
     right: -5px; /* 调整直线与文本之间的距离 */
-    height: 18%; /* 直线的高度 */
-    width: 0.125%; /* 直线的宽度 */
+    height: 14%; /* 直线的高度 */
+    width: 0.25%; /* 直线的宽度 */
     background-color: #000; /* 直线的颜色 */
-    margin-top: 42.5%;
-    margin-right: 35%;
+    margin-top: 42.7%;
+    margin-right: 40%;
 }
 
 .five-2{
-    margin-left: 70%;
+    margin-left: 60%;
     /* position: absolute; */
     margin-top: -5%;
-    height: 50px;
+    
 }
 
 .five-3{
     width: 25%;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-right: 30%;
     height: 100%;
     border-radius: 50px;
     color: #e9678c;
-    font-size: 150%;
+    font-size: 125%;
     background-color: #f4b9bd;
-    margin-top: -200%;
+   
 }
 
 .five-4{
-    width: 30%;
+    width: 25%;
     height: 100%;
     border-radius: 50px;
     color: #5e95e0;
-    font-size: 150%;
+    font-size: 125%;
     background-color: #aec5e7;
+    margin-top: 1%;
 }
 
 .fa-shopping-cart{
-    font-size: 350%;
-    margin-left: -6%;
-    margin-top: -0.5%;
+    font-size: 200%;
+    margin-left: -3%;
+    margin-top: 0.5%;
     position: absolute;
 }
 
 .fa-money{
-    font-size: 350%;
+    font-size: 200%;
     position: absolute;
-    margin-left: -2%;
+    margin-left: 2%;
+    margin-top: 0.5%;
 }

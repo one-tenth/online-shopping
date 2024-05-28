@@ -17,14 +17,14 @@
             <img id="list-p" src="{% static 'images/list-p.png' %}" alt="">
         </div>
         <form method="POST" action="/search/"> 
+            {% csrf_token %}
             <div class="search-box">
-                <img id="search" src="{% static 'images/search.png' %}" alt="">
-                <input type="text" id="site-search" name="q" placeholder="請輸入關鍵字 例:短袖女裝">
+                <input type="text" id="q" name="q" placeholder="請輸入關鍵字 例:短袖女裝">
                 <button type="submit" style="font-family:微軟正黑體;font-weight:bolder;font-size:22pt;">&#x1F50E;</button>
             </div>
         </form>
     </div>
-
+    {% block content %}
     <div class="product">
         <p id="foryou">為您推薦</p>
         <div class="fyp">
@@ -44,7 +44,7 @@
             {% endfor %}
         </div>
     </div>
-    
+    {% endblock %}
 
     <div class="list">
         <a href="{% url 'mine' %}"><button id="mine">我的</button></a>
@@ -81,5 +81,7 @@
             </div>
         </ul>
     </div>
+    
+    
 </body>
 </html>

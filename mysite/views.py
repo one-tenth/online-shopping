@@ -38,7 +38,7 @@ def logout(request):
 
 #搜尋
 def search(request):
-    kw = request.GET.get('q')#抓表單的東西(看你header的名字)
+    kw = request.POST.get('q')#抓表單的東西(看你header的名字)
     products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
     return render(request, 'search.html', {'product': product, 'keyWord': kw})
 
@@ -88,7 +88,8 @@ def home(request):
 def mine(request):
     return render(request, "mine.html") 
 def man(request):
-    return render(request, "man.html") 
+    mans_products = Product.objects.filter(category='man')
+    return render(request, 'man.html', {'mans_products': mans_products})
 def girl(request):
     return render(request, "girl.html") 
 def child(request):
