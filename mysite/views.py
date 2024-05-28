@@ -40,7 +40,7 @@ def logout(request):
 def search(request):
     kw = request.POST.get('q')#抓表單的東西(看你header的名字)
     products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
-    return render(request, 'search.html', {'product': product, 'keyWord': kw})
+    return render(request, 'search.html', {'products': products, 'keyWord': kw})
 
 #註冊
 def register(request):

@@ -1,33 +1,29 @@
-{%block title%}正妹圖書館{% endblock title %}
-{% block headmessage %}
-<div style="display: flex; justify-content: space-between; align-items: center;">
-    <h3 style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>{{ keyWord }} 的相關搜尋：</h3>
-    <a style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;' href="/">回首頁</a> 
-</div>
-{%endblock headmessage%}
-{% block content%}
-{% if not products %}
-<p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>沒有該衣服喔</p>
-{% else %}
-{% for product in products %}
-<div class='card' style='background-color:#F5ECCF'>
-    <div class='card-header'>
-        <p style='font-family:微軟正黑體;font-size:20pt;font-weight:bolder;'>
-            <a href='/product' style="color:713503">{{ product.name }}</a>
-        </p>
-    </div>
-    <div class='card-body' style='background-color:#FDFBF9'>
-        <p>
-           {{ product.description | truncatechars:40 }}
-        </p>
-    </div>
-    <div class='card-footer'  style='background-color:#F5ECCF;font-weight:bold;font-size:14pt;'>
-        <p>
-            發佈時間：
-        </p>
-    </div>
-</div>
-<br><!--一個card放一行-->
-{% endfor %}
-{% endif %}
-{% endblock content %}
+{% extends "home.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>搜尋結果</h1>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {% if keyWord %}
+        <p>搜尋關鍵字: "{{ keyWord }}"</p>
+    {% endif %}
+
+    <ul>
+        {% if products %}
+            {% for product in products %}
+                <li>
+                    <h2>{{ product.name }}</h2>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <p>價格: {{ product.price }}</p>
+                    <p>顏色: {{ product.color }}</p>
+                    <p>描述: {{ product.description }}</p>
+                    <p>數量: {{ product.quantity }}</p>
+                    <p>類別: {{ product.category }}</p>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>沒有找到符合條件的產品。</li>
+        {% endif %}
+    </ul>
+{% endblock %}
