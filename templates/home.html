@@ -36,7 +36,7 @@
                         <p>No image available</p>
                     {% endif %}
                     <div class="fyp-1t">
-                        <p>{{ item.name }}</p>
+                        <a href='/product/{{ item.id }}'>{{ item.name }}</a>
                         <p>NT $ {{ item.price }}</p>
                         <p id="sell{{ forloop.counter }}">已售 {{ item.quantity }}</p>
                     </div>

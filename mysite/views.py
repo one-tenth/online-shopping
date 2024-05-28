@@ -82,6 +82,15 @@ def evaluate(request):
 def product(request):
     products = Product.objects.all()
     return render(request, "product.html", {'products': products})
+def showproduct(request, id):
+	try:
+		product = Product.objects.get(id = id)
+		if product != None:
+			return render(request, 'product.html', locals())
+	except:
+		return redirect('/')
+     
+    
 def home(request):
     items = Product.objects.all()
     return render(request, 'home.html', {'items': items}) 
