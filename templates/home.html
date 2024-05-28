@@ -31,7 +31,7 @@
             {% for item in items %}
                 <div class="fyp-b">
                     {% if item.image %}
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                        <img id="fyp-p" src="{{ item.image.url }}" alt="{{ item.name }}">
                     {% else %}
                         <p>No image available</p>
                     {% endif %}

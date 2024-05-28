@@ -5,7 +5,7 @@
 
 {% block content %}
     <h1>男性產品列表</h1>
-    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <ul>
         {% if mans_products %}
         {% for product in mans_products %}
@@ -20,7 +20,7 @@
             </li>
         {% endfor %}
         {% else %}
-        <li>123</li>
+        <li>目前沒有相關產品上架喔</li>
         {% endif %}
     </ul>
 {% endblock %}

@@ -77,27 +77,37 @@ def register(request):
 
 def evaluate(request):
     return render(request,'evaluate.html')
+
+#產品
 def product(request):
     products = Product.objects.all()
     return render(request, "product.html", {'products': products})
-
 def home(request):
     items = Product.objects.all()
     return render(request, 'home.html', {'items': items}) 
-
-def mine(request):
-    return render(request, "mine.html") 
 def man(request):
     mans_products = Product.objects.filter(category='man')
     return render(request, 'man.html', {'mans_products': mans_products})
 def girl(request):
-    return render(request, "girl.html") 
+    girls_products = Product.objects.filter(category='woman')
+    return render(request, 'girl.html', {'girls_products': girls_products})
 def child(request):
-    return render(request, "child.html") 
+    childs_products = Product.objects.filter(category='child')
+    return render(request, 'child.html', {'childs_products': childs_products})
 def jewelry(request):
-    return render(request,"jewelry.html")
+    jewelrys_products = Product.objects.filter(category='jewelry')
+    return render(request, 'jewelry.html', {'jewelrys_products': jewelrys_products})
 def shoe(request):
-    return render(request,"shoe.html")
+    shoes_products = Product.objects.filter(category='shoe')
+    return render(request, 'shoe.html', {'shoes_products': shoes_products})
+
+
+def mine(request):
+    return render(request, "mine.html") 
+
+
+
+
 def shopcar(request):
     return render(request,"shopcar.html")
 def order(request):
