@@ -38,4 +38,5 @@ urlpatterns = [
     path('order/',mv.order,name="order"),
     path('search/',mv.search,name="search"),
     path('logout/',mv.logout,name='logout'),
+    path('pay/',mv.pay,name="pay")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

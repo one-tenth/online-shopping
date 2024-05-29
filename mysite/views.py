@@ -122,7 +122,8 @@ def shopcar(request):
 def order(request):
     return render(request,"order.html")
 
-
+def pay(request):
+     return render(request,"pay.html")
 
 
 

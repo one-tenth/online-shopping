@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pay.css">
+    <link rel="stylesheet" href="{% static 'css/pay.css' %}">
     <script src="pay.js"></script> 
     <title>結帳</title>
 </head>
@@ -13,7 +14,7 @@
     </div>
     <div class="pro">
         <div class="pro-pb">
-            <img src="images/fyp1.png" alt="">
+            <img src="{% static 'images/fyp1.png' %}" alt="">
         </div>
         <div class="pro-tb">
             <p class="pro-t1">V領針織上衣</p>
@@ -28,7 +29,7 @@
             <p class="trans-t3">杭州南路一段23號</p>
         </div>
         <div class="trans-pb">
-            <img id="trans-p" src="images/point.png" alt="">
+            <img id="trans-p" src="{%static "images/point.png"%}" alt="">
         </div>
     </div>
     <div class="trans-2">
@@ -36,7 +37,7 @@
             <p class="trans-2t">付款方式:貨到付款</p>
         </div>
         <div class="trans-2pb">
-            <img id="trans-2p" src="images/point.png" alt="">
+            <img id="trans-2p" src="{%static "images/point.png"%}" alt="">
         </div>
     </div>
     <div class="bottom">
@@ -44,9 +45,11 @@
             <p class="tot-t">總付款金額$399</p>
         </div>
         <div class="pay-bb">
-            <button class="pay-b">確認結帳
-                <img class="pay-p" src="images/money.png" alt="">
+        <a href="{%url 'home'%}">
+            <button type="submit" class="pay-b">確認結帳
+                <img class="pay-p" src="{%static "images/money.png"%}" alt="">
             </button>
+        </a>
         </div>
     </div>
     <div id="myModal1" class="modal1">
