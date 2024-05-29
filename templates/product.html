@@ -19,20 +19,12 @@
             <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:100%;">
         </div>
         <div class="three">
-            <img src="{% static 'images/product2.png' %}" width="18%" height="20%">
-            <p class="p0">杏色</p>
             <div class="three-1">
-                <h1>喵喵服飾</h1>
-                <div class="three-2">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <p>台北市中正區</p>
-                </div>
                 <p class="p1">商品詳情</p>
                 <div class="three-3">
                     <div class="three-4">
                         <div class="three-3">
-                            <p>庫存:</p>
-                            <p>{{ product.quantity }}</p>
+                            <p>庫存:{{ product.quantity }}</p>
                             <p>描述: {{ product.description|safe }}</p>
                         </div>
                         
