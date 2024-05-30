@@ -10,6 +10,10 @@ from mysite.forms import UserRegisterForm
 from django.shortcuts import render, redirect
 from .models import Member
 from django.contrib.auth.hashers import make_password
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
 
 #登入
 def logins(request):
@@ -34,7 +38,7 @@ def logins(request):
 def logout(request):
     auth.logout(request)
     message = f'成功登出'
-    return redirect('')
+    return redirect('/')
 
 #搜尋
 def search(request):
@@ -89,8 +93,6 @@ def showproduct(request, id):
 			return render(request, 'product.html', locals())
 	except:
 		return redirect('/')
-     
-    
 def home(request):
     items = Product.objects.all()
     return render(request, 'home.html', {'items': items}) 
@@ -114,7 +116,84 @@ def shoe(request):
 def mine(request):
     return render(request, "mine.html") 
 
+#更新使用者資料
+@login_required(login_url='/login/') 
+def profile(request):
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            username = request.user.username
+            try:
+                user = Member.objects.get(username=username)
+                userinfo = Member.objects.get(username=username)
+                # 從 Profile 對象中提取欄位數據
+                initial_data = {
+                    'username': userinfo.username,
+                    'borndate': userinfo.borndate,
+                    'phoneNum': userinfo.phoneNum,
+                    'email':userinfo.email
+                    # 添加更多欄位
+                }
+                form = {
+                    'username': userinfo.username,
+                    'borndate': userinfo.borndate,
+                    'phoneNum': userinfo.phoneNum,
+                    'email':userinfo.email
+                    # 添加更多欄位
+                } 
+            except Member.DoesNotExist:
+                form = {
+                    'username': userinfo.username,
+                    'borndate': userinfo.borndate,
+                    'phoneNum': userinfo.phoneNum,
+                    'email':userinfo.email
+                    # 添加更多欄位
+                } 
+        return render(request, 'userinfo.html', {'form': form})  # 渲染表單
 
+    elif request.method == 'POST':
+        username = request.user.username
+        user = Member.objects.get(username=username)
+        try:
+            userinfo = Member.objects.get(username=username)
+            form = {
+                'username': request.POST.get('username'),
+                'borndate': request.POST.get('borndate'),
+                'phoneNum': request.POST.get('phoneNum'),
+                'email': request.POST.get('email'),
+                # 添加更多欄位
+            }
+            # 更新現有 Profile 對象
+            userinfo.username = form['username']
+            userinfo.borndate = form['borndate']
+            userinfo.phoneNum = form['phoneNum']
+            userinfo.email = form['email']
+            # 更新更多欄位
+            userinfo.save()
+            message = '成功更新個人資料！'
+        except Member.DoesNotExist:
+            form = {
+                'username': request.POST.get('username'),
+                'borndate': request.POST.get('borndate'),
+                'phoneNum': request.POST.get('phoneNum'),
+                'email': request.POST.get('email'),
+                # 添加更多欄位
+            }
+            # 創建新的 Profile 對象
+            userinfo = Member(
+                user=user,
+                username=form['username'],
+                borndate=form['borndate'],
+                phoneNum=form['phoneNum'],
+                email=form['email'],
+                # 添加更多欄位
+            )
+            userinfo.save()
+            message = '成功新增！'
+        return render(request, 'userinfo.html', {'form': form, 'message': message})
+    else:
+        message = "ERROR"
+        print('出錯回首頁')
+        return redirect("/")  # 如果請求不是 GET 或 POST，則重定向到首頁
 
 
 def shopcar(request):
@@ -126,7 +205,7 @@ def pay(request):
      return render(request,"pay.html")
 
 
-'''我回家研究
+'''
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User

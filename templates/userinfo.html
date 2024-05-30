@@ -1,0 +1,28 @@
+  
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用者資料</title>
+</head>
+<body>
+    <h1>使用者資料</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="username">使用者名稱：</label>
+        <input type="text" id="username" name="username" value="{{ form.username }}"><br>
+        <label for="borndate">生日：</label>
+        <input type="text" id="borndate" name="borndate" value="{{ form.borndate }}"><br>
+        <label for="phoneNum">手機：</label>
+        <input type="text" id="phoneNum" name="phoneNum" value="{{ form.phoneNum }}"><br>
+        <label for="email">電子信箱：</label>
+        <input type="text" id="email" name="email" value="{{ form.email }}"><br>
+        <!-- 添加更多欄位 -->
+        <input type="submit" value="儲存">
+    </form>
+</body>
+</html>
