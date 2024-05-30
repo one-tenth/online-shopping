@@ -58,28 +58,74 @@
             <img id="list-p2" src="{% static 'images/list-p.png' %}" alt="">
             <p id="hehehe">分類</p>
         </div>
-        <ul>
+        {% if request.user.is_active %}
+            {% if request.user.is_superuser%}
+                <ul>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'man' %}"><li class="subject">男裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'girl' %}"><li class="subject">女裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'child' %}"><li class="subject">童裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'jewelry' %}"><li class="subject">首飾</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'shoe' %}"><li class="subject">鞋子</li></a>
+                    </div>
+                    <p>新增庫存</p>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'logout' %}"><li class="subject">登出</li></a>
+                    </div>
+                </ul>
+            {% else %}
+            <ul>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'man' %}"><li class="subject">男裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'girl' %}"><li class="subject">女裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'child' %}"><li class="subject">童裝</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'jewelry' %}"><li class="subject">首飾</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'shoe' %}"><li class="subject">鞋子</li></a>
+                    </div>
+                    <div class="sub-b">
+                        <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
+                        <a href="{% url 'logout' %}"><li class="subject">登出</li></a>
+                    </div>
+                </ul>
+            {% endif %}
+        {% else %}
             <div class="sub-b">
                 <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-                <a href="{% url 'man' %}"><li class="subject">男裝</li></a>
+                <a href="{% url 'login' %}"><li class="subject">登入</li></a>
             </div>
             <div class="sub-b">
                 <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-                <a href="{% url 'girl' %}"><li class="subject">女裝</li></a>
+                <a href="{% url 'register' %}"><li class="subject">註冊</li></a>
             </div>
-            <div class="sub-b">
-                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-                <a href="{% url 'child' %}"><li class="subject">童裝</li></a>
-            </div>
-            <div class="sub-b">
-                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-                <a href="{% url 'jewelry' %}"><li class="subject">首飾</li></a>
-            </div>
-            <div class="sub-b">
-                <img id="sub-p" src="{% static 'images/list-c.png' %}" alt="">
-                <a href="{% url 'shoe' %}"><li class="subject">鞋子</li></a>
-            </div>
-        </ul>
+            
+        {% endif %}
     </div>
     
     
