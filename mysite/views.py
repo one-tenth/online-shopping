@@ -195,5 +195,30 @@ def profile(request):
         message = "ERROR"
         print('出錯回首頁')
         return redirect("/")  # 如果請求不是 GET 或 POST，則重定向到首頁
+        
+        
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用者資料</title>
+</head>
+<body>
+    <h1>使用者資料</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="field1">欄位1：</label>
+        <input type="text" id="field1" name="field1" value="{{ form.field1 }}"><br>
+        <label for="field2">欄位2：</label>
+        <input type="text" id="field2" name="field2" value="{{ form.field2 }}"><br>
+        <!-- 添加更多欄位 -->
+        <input type="submit" value="儲存">
+    </form>
+</body>
+</html>
 
 '''
