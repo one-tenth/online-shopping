@@ -89,6 +89,7 @@ class Comment(models.Model):
 )   
     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
     order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     comment = models.TextField()
     score = models.CharField(max_length=10,choices=Score)
     scoreDate = models.DateTimeField(auto_now_add=True)
