@@ -13,7 +13,7 @@ from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.contrib.auth.hashers import check_password
 
 #登入
 def logins(request):
@@ -123,36 +123,27 @@ def profile(request):
         if request.user.is_authenticated:
             username = request.user.username
             try:
-                user = Member.objects.get(username=username)
                 userinfo = Member.objects.get(username=username)
-                # 從 Profile 對象中提取欄位數據
-                initial_data = {
-                    'username': userinfo.username,
-                    'borndate': userinfo.borndate,
-                    'phoneNum': userinfo.phoneNum,
-                    'email':userinfo.email
-                    # 添加更多欄位
-                }
+                # 从 Profile 对象中提取字段数据
                 form = {
                     'username': userinfo.username,
                     'borndate': userinfo.borndate,
                     'phoneNum': userinfo.phoneNum,
-                    'email':userinfo.email
-                    # 添加更多欄位
-                } 
+                    'email': userinfo.email
+                    # 添加更多字段
+                }
             except Member.DoesNotExist:
                 form = {
-                    'username': userinfo.username,
-                    'borndate': userinfo.borndate,
-                    'phoneNum': userinfo.phoneNum,
-                    'email':userinfo.email
-                    # 添加更多欄位
-                } 
-        return render(request, 'userinfo.html', {'form': form})  # 渲染表單
+                    'username': '',
+                    'borndate': '',
+                    'phoneNum': '',
+                    'email': ''
+                    # 添加更多字段
+                }
+            return render(request, 'userinfo.html', {'form': form})
 
     elif request.method == 'POST':
         username = request.user.username
-        user = Member.objects.get(username=username)
         try:
             userinfo = Member.objects.get(username=username)
             form = {
@@ -160,14 +151,14 @@ def profile(request):
                 'borndate': request.POST.get('borndate'),
                 'phoneNum': request.POST.get('phoneNum'),
                 'email': request.POST.get('email'),
-                # 添加更多欄位
+                # 添加更多字段
             }
-            # 更新現有 Profile 對象
+            # 更新现有 Profile 对象
             userinfo.username = form['username']
             userinfo.borndate = form['borndate']
             userinfo.phoneNum = form['phoneNum']
             userinfo.email = form['email']
-            # 更新更多欄位
+            # 更新更多字段
             userinfo.save()
             message = '成功更新個人資料！'
         except Member.DoesNotExist:
@@ -176,24 +167,42 @@ def profile(request):
                 'borndate': request.POST.get('borndate'),
                 'phoneNum': request.POST.get('phoneNum'),
                 'email': request.POST.get('email'),
-                # 添加更多欄位
+                # 添加更多字段
             }
-            # 創建新的 Profile 對象
+            # 创建新的 Profile 对象
             userinfo = Member(
-                user=user,
+                user=request.user,
                 username=form['username'],
                 borndate=form['borndate'],
                 phoneNum=form['phoneNum'],
                 email=form['email'],
-                # 添加更多欄位
+                # 添加更多字段
             )
             userinfo.save()
             message = '成功新增！'
+
+        # 处理密码更新逻辑
+        password = request.POST.get('password')
+        newPassword1 = request.POST.get('newPassword1')
+        newPassword2 = request.POST.get('newPassword2')
+
+        if password and newPassword1 and newPassword2:  # 只有在密码字段都不为空时才处理密码更新
+            if not check_password(password, request.user.password):
+                return render(request, 'userinfo.html', {'form': form, 'msg': '密碼錯誤'})
+            elif newPassword1 != newPassword2:
+                return render(request, 'userinfo.html', {'form': form, 'msg': '兩次密碼輸入不同'})
+            else:
+                request.user.set_password(newPassword1)
+                request.user.save()
+                messages.success(request, '密碼修改成功，請重新登入')
+                return redirect('login')
+
         return render(request, 'userinfo.html', {'form': form, 'message': message})
+
     else:
         message = "ERROR"
         print('出錯回首頁')
-        return redirect("/")  # 如果請求不是 GET 或 POST，則重定向到首頁
+        return redirect("/")  # 如果请求不是 GET 或 POST，则重定向到首页
 
 
 def shopcar(request):
