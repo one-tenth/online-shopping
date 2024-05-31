@@ -204,3 +204,47 @@ def order(request):
 def pay(request):
      return render(request,"pay.html")
 
+'''
+def ModifyInformation(request):
+    if request.method=='POST':
+        password=request.POST.get('password')
+        newPassword1=request.POST.get('newPassword1')
+        newPassword2=request.POST.get('newPassword2')
+        if not check_password(password, request.user.password):
+            return render(request, 'modifyInformation.html', {'msg':'密碼錯誤'})
+        elif newPassword1 != newPassword2:
+            return render(request, 'modifyInformation.html', {'msg':'兩次密碼輸入不同'})
+        else:
+            request.user.set_password(newPassword1)
+            request.user.save()
+            messages.success(request, '密碼修改成功，請重新登入')
+            return redirect('login')
+    return render(request, 'modifyInformation.html')
+
+<form action="/modifyInformation/" method="post">
+        {% csrf_token %}
+        <h3 style="color: red;">{{ msg }}</h3>
+        <div class="field">
+            <label for="username">原密碼： </label>
+            <input type="password" name="password" id="">
+        </div>
+        <div class="field">
+            <label for="password">新密碼： </label>
+            <input type="password" name="newPassword1" id="">
+        </div>
+        <div class="field">
+            <label for="password2">新密碼確認： </label>
+            <input type="password" name="newPassword2" id="">
+        </div>
+        <input type="submit" value="更改">
+    </form>
+{% endblock content %}
+{% block scripts %}
+    {{ block.super }}
+    {% if success_alert %}
+        <script>
+            alert('更改成功');
+            window.location.href = "/login/";  // 跳转到主页
+        </script>
+    {% endif %}
+'''
