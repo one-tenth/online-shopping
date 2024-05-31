@@ -39,5 +39,5 @@ urlpatterns = [
     path('search/',mv.search,name="search"),
     path('logout/',mv.logout,name='logout'),
     path('pay/',mv.pay,name="pay"),
-    path('userinfo/',mv.profile,name='prodfile')
+    path('profile/',mv.profile,name='profile')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
