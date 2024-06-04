@@ -8,7 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from mysite.models import Product
 from mysite.forms import UserRegisterForm
 from django.shortcuts import render, redirect
-from .models import Member
+from .models import Member,shoppingCart
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -82,10 +82,7 @@ def register(request):
 def evaluate(request):
     return render(request,'evaluate.html')
 
-#產品
-def product(request):
-    products = Product.objects.all()
-    return render(request, "product.html", {'products': products})
+
 def showproduct(request, id):
 	try:
 		product = Product.objects.get(id = id)
@@ -93,6 +90,7 @@ def showproduct(request, id):
 			return render(request, 'product.html', locals())
 	except:
 		return redirect('/')
+    
 def home(request):
     items = Product.objects.all()
     return render(request, 'home.html', {'items': items}) 
@@ -203,57 +201,54 @@ def profile(request):
         message = "ERROR"
         print('出錯回首頁')
         return redirect("/")  # 如果请求不是 GET 或 POST，则重定向到首页
+#產品
+def product(request):
+    products = Product.objects.all()
+    return render(request, "product.html", {'products': products})
 
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Product, shoppingCart
 
+# def add_to_cart(request, product_id):
+#     member = request.user  # 假設會員是通過登錄的用戶關聯的
+#     product = get_object_or_404(Product, id=product_id)
+#     cart_item, created = shoppingCart.objects.get_or_create(
+#         member_id=member,
+#         product_id=product,
+#         defaults={'orderQua': 1}
+#     )
+#     if not created:
+#         cart_item.orderQua = str(int(cart_item.orderQua) + 1)
+#         cart_item.save()
+#     return redirect('shopcar')
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    # 获取当前用户的 ID
+    member_id = request.user.id
+    
+    # 确保用户已登录
+    if member_id:
+        # 使用 get_or_create 方法创建 shoppingCart 实例，并传递 member_id 参数
+        cart_item, created = shoppingCart.objects.get_or_create(product_id=product, member_id_id=member_id, defaults={'orderQua': 1})
+        
+        if not created:
+            cart_item.orderQua += str(int(cart_item.orderQua) + 1)
+            cart_item.save()
+        
+        return redirect('shopcar')
+    else:
+        # 用户未登录，重定向到登录页面或者其他处理逻辑
+        return redirect('logins')
+    
 def shopcar(request):
-    return render(request,"shopcar.html")
+    cart_items = shoppingCart.objects.all()
+    return render(request, 'shopcar.html', {'cart_items': cart_items})
+
+# def shopcar(request):
+#     return render(request,"shopcar.html")
 def order(request):
     return render(request,"order.html")
 
 def pay(request):
      return render(request,"pay.html")
-
-'''
-def ModifyInformation(request):
-    if request.method=='POST':
-        password=request.POST.get('password')
-        newPassword1=request.POST.get('newPassword1')
-        newPassword2=request.POST.get('newPassword2')
-        if not check_password(password, request.user.password):
-            return render(request, 'modifyInformation.html', {'msg':'密碼錯誤'})
-        elif newPassword1 != newPassword2:
-            return render(request, 'modifyInformation.html', {'msg':'兩次密碼輸入不同'})
-        else:
-            request.user.set_password(newPassword1)
-            request.user.save()
-            messages.success(request, '密碼修改成功，請重新登入')
-            return redirect('login')
-    return render(request, 'modifyInformation.html')
-
-<form action="/modifyInformation/" method="post">
-        {% csrf_token %}
-        <h3 style="color: red;">{{ msg }}</h3>
-        <div class="field">
-            <label for="username">原密碼： </label>
-            <input type="password" name="password" id="">
-        </div>
-        <div class="field">
-            <label for="password">新密碼： </label>
-            <input type="password" name="newPassword1" id="">
-        </div>
-        <div class="field">
-            <label for="password2">新密碼確認： </label>
-            <input type="password" name="newPassword2" id="">
-        </div>
-        <input type="submit" value="更改">
-    </form>
-{% endblock content %}
-{% block scripts %}
-    {{ block.super }}
-    {% if success_alert %}
-        <script>
-            alert('更改成功');
-            window.location.href = "/login/";  // 跳转到主页
-        </script>
-    {% endif %}
-'''
