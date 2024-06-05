@@ -230,10 +230,14 @@ def add_to_cart(request, product_id):
     # 确保用户已登录
     if member_id:
         # 使用 get_or_create 方法创建 shoppingCart 实例，并传递 member_id 参数
-        cart_item, created = shoppingCart.objects.get_or_create(product_id=product, member_id_id=member_id, defaults={'orderQua': 1})
+        cart_item, created = shoppingCart.objects.get_or_create(
+            product_id=product, 
+            member_id_id=member_id, 
+            defaults={'orderQua': 1}
+        )
         
         if not created:
-            cart_item.orderQua += str(int(cart_item.orderQua) + 1)
+            cart_item.orderQua = str(int(cart_item.orderQua) - 1)
             cart_item.save()
         
         return redirect('shopcar')
@@ -242,8 +246,12 @@ def add_to_cart(request, product_id):
         return redirect('logins')
     
 def shopcar(request):
-    cart_items = shoppingCart.objects.all()
-    return render(request, 'shopcar.html', {'cart_items': cart_items})
+    member_id = request.user.id
+    if member_id:
+        cart_items = shoppingCart.objects.filter(member_id_id=member_id)
+        return render(request, 'shopcar.html', {'cart_items': cart_items})
+    else:
+        return redirect('logins')
 
 # def shopcar(request):
 #     return render(request,"shopcar.html")

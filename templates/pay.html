@@ -10,17 +10,20 @@
 </head>
 <body>
     <div class="top">
+        <img class="back" src="{% static 'images/back.png' %}" alt="">
         <p id="top-t">結帳</p>
     </div>
     <div class="pro">
         <div class="pro-pb">
             <img src="{% static 'images/fyp1.png' %}" alt="">
         </div>
-        <div class="pro-tb">
+        <div class="pro-info">
             <p class="pro-t1">V領針織上衣</p>
             <p class="pro-t2">灰色/XS</p>
             <p class="pro-t3">數量:1</p>
         </div>
+    </div>
+    
     </div>
     <div class="trans-1">
         <div class="trans-tb">
@@ -42,7 +45,7 @@
     </div>
     <div class="bottom">
         <div class="tot-tb">
-            <p class="tot-t">總付款金額$399</p>
+            <p class="tot-t">總付款金額</p>
         </div>
         <div class="pay-bb">
         <a href="{%url 'home'%}">
