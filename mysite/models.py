@@ -91,5 +91,5 @@ class Comment(models.Model):
     order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     comment = models.TextField()
-    score = models.IntegerField(choices=[(i, f'Option {i}') for i in range(1, 6)])
+    score = models.IntegerField(choices=Score)
     scoreDate = models.DateTimeField(auto_now_add=True)
