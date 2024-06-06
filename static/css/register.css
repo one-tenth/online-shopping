@@ -1,4 +1,89 @@
 .title {
+    margin-bottom: 2%; /* 调整标题底部的间距 */
+    font-size: 50px;
+    background-color: rgb(191, 207, 235);
+    text-align: center; /* 使标题文本水平居中 */
+    padding: 10px; /* 添加内边距以便背景色更显眼 */
+}
+
+.all {
+    margin: 0 auto; /* 自动左右边距，使其水平居中 */
+    margin-top: 1%; /* 调整顶部的间距，靠近标题 */
+    padding: 20px;
+    border: 5px solid #0e008d; /* 设置咖啡色边框 */
+    border-radius: 10px; /* 添加圆角 */
+    background-color: #f9f9f9; /* 设置背景颜色为淡灰色，以便与页面其他部分区分开 */
+    width: 65%; /* 设置容器宽度为页面宽度的50% */
+    max-width: 900px; /* 最大宽度限制 */
+    max-height: 1100px;
+
+}
+
+.password,
+.confirm_password,
+.phone,
+.email,
+.name,
+.birth-year {
+    font-weight: bolder;
+    width: 100%; /* 使输入框的宽度自适应父容器 */
+    max-width: 600px; /* 设置最大宽度 */
+    height: 50px;
+    border-radius: 80px;
+    background-color: #e2e2e2; /* 设置背景颜色 */
+    border: none; /* 去掉边框 */
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    padding-left: 20px; /* 添加一些内边距以便文字不紧贴左边框 */
+    font-size: 25px; /* 确保字体大小与占位符一致 */
+}
+
+.submit {
+    position: absolute;
+    margin-left: 37%;
+    margin-top: -50px;
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: #fce8fc;
+    border-color: #130031; /* 调整外框颜色为灰色 */
+    border-width: 5px;
+    border-style: solid; /* 确保边框样式为实线 */
+    border-radius: 20px; /* 添加圆角 */
+    color: rgb(0, 0, 0); /* 确保按钮文字颜色为黑色 */
+}
+
+.man, .woman {
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 80px;
+    padding: 10px; /* 添加内边距 */
+}
+
+.male, .female {
+    font-weight: bolder;
+    transform: scale(1.25);
+    margin-left: 30px;
+}
+
+.gender {
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 100px;
+    display: inline-block; /* 使背景适应内容 */
+    padding: 10px 20px; /* 添加内边距 */
+}
+
+::placeholder {
+    font-size: 25px;
+    color: black;
+}
+
+/* .title {
     margin-left: 47%;
     margin-bottom: 5%;
     font-size: 50px;
@@ -70,4 +155,4 @@
     background-color: #ececec;
     border-radius: 100px;
 
-}
+} */

@@ -1,3 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'css/register.css' %}>
+</head>
+
+<body>
+    <h1 class="title">會員註冊</h1>
+    <div class="all">
+        <form class="radius" action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <input type="text" class="name" name="name" placeholder="帳號名稱：" required><br><br>
+            <input type="text" class="birth-year" name="borndate" name="birth_year"
+                placeholder="生日：（YYYY-MM-DD）" required><br><br>
+            <div class="gen">
+                <label for="gender" class="gender">性別 ：</label>
+                <input type="radio" class="male" name="gender" value="male">
+                <label for="male" class="man">男</label>
+                <input type="radio" class="female" name="gender" value="female">
+                <label for="female" class="woman">女</label>
+            </div><br><br>
+            <input type="tel" class="phone" name="phoneNum" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+                placeholder="電話  : 09xx - xxx - xxx" required><br><br>
+            <input type="email" class="email" name="email" placeholder="信箱  :" required><br><br>
+            <input type="password" class="password" name="password" placeholder="密碼  :" required><br><br>
+            <input type="password" class="confirm_password" name="confirm_password" placeholder="確認密碼  :"
+                required><br><br>
+            <!-- 註冊按鈕 -->
+            {% if error %}
+            <p class="error">{{ error }}</p>  <!-- 显示错误信息 -->
+            {% endif %} 
+            <input type="submit" name="submit" class="submit" value="註冊"><br><br>
+        </form>
+    </div>
+</body>
+
+</html>
+
 {% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +81,7 @@
 </body>
 
 </html> {% endcomment %}
+{% comment %} 
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -79,4 +123,4 @@
     </div>
 </body>
 
-</html>
+</html> {% endcomment %}
