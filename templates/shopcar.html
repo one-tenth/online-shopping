@@ -26,9 +26,9 @@
                 <p>價格: {{ item.product_id.price }}</p>
             </li>
                     <div class="quantity-container">
-                        <button type="button" onclick="changeQuantity('quantity1', -1)">-</button>
+                        {% comment %} <button type="button" onclick="changeQuantity('quantity1', -1)">-</button> {% endcomment %}
                         <input type="number" class="quantity" id="quantity1" name="quantity1" min="0" max="100" value="0" onchange="calculateTotal()">
-                        <button type="button" onclick="changeQuantity('quantity1', 1)">+</button>
+                        {% comment %} <button type="button" onclick="changeQuantity('quantity1', 1)">+</button> {% endcomment %}
                     </div>
                 </div>
                 {% endfor %}

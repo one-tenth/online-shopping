@@ -243,7 +243,7 @@ def add_to_cart(request, product_id):
         return redirect('shopcar')
     else:
         # 用户未登录，重定向到登录页面或者其他处理逻辑
-        return redirect('logins')
+        return redirect('login')
     
 def shopcar(request):
     member_id = request.user.id
@@ -251,7 +251,7 @@ def shopcar(request):
         cart_items = shoppingCart.objects.filter(member_id_id=member_id)
         return render(request, 'shopcar.html', {'cart_items': cart_items})
     else:
-        return redirect('logins')
+        return redirect('login')
 
 # def shopcar(request):
 #     return render(request,"shopcar.html")
