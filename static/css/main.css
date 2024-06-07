@@ -1,237 +1,228 @@
-.top{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between; /* 让子元素尽可能地平均分配，使它们之间有空白 */
-    align-items: center; /* 垂直居中子元素 */
+body {
+    font-family: '微軟正黑體', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffefe;
 }
 
-.icon-box{
-    display: flex;
-    width: 20%;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-#house{
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-box {
     height: 80px;
-    width: 80px;
-    margin-left: 10px;
-}
-
-.search-box{
-    width: 30%;
-    margin-right: 0.5%;
     display: flex;
+    align-items: center;
 }
 
-#search{
-    height: 35px;
-    width: 35px;
+#house {
+    margin-left: 15%;
+    height: 100px;
+    width: 100px;
     margin-right: 10px;
-    position: relative;
-    left: 55px;
-    top: 10px;
 }
 
-#search-input{
-    height: 50px;
-    width: 600px;
-    margin-left: 0.5px;
-    padding-left: 60px;
-    border-radius: 2px;
-    border-width: 3px;
-    font-size: 20px;
+#list-p {
+    margin-left: 20%;
+    width: 80px;
+    height: 80px;
+    margin-top: -5px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    height: 80px; /* 调整搜索栏高度 */
+    margin-top: 35px;
+}
+
+#search {
+    height: 60px;
+    width: 60px; /* 调整搜索图标的大小 */
+    position: absolute;
+    left: 20px;
+}
+
+#search-input {
+    width: calc(100% - 80px); /* 调整输入框宽度 */
+    padding: 15px 15px 15px 80px; /* 调整内边距以适应更大的图标 */
+    font-size: 24px; /* 调整搜索输入框的字体大小 */
+    border-radius: 5px;
+    border: 3px solid #ccc;
+}
+
+#q {
+    height: 60px;
+    width: 800px;
+    font-size: 40px;
+    font-weight: bolder;
+    border: 3px solid black;
+    margin-left: 35%;
+}
+
+#but {
+    height: 65px;
+    width: 65px;
+    margin-left: 3%;
+    border: 3px solid black;
+}
+
+#foryou {
+    font-size: 50px;
+    background-color: rgb(238, 238, 192);
+    text-align: center;
+    font-weight: bolder;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.fyp {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px; /* 增加商品之间的间距 */
+    margin: 0 40px; /* 增加左右内边距，避免贴到页面 */
+}
+
+.fyp-b {
+    background-color: #fff;
+    border: 5px solid #353131;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box; /* 包含内边距和边框的宽度计算 */
+}
+
+#fyp-p {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#girl {
+    font-size: 60px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: rgb(238, 238, 192);
+}
+
+.fyp-1t, .fyp-2t {
+    font-weight: bolder;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.fyp-1t a {
+    text-decoration: none;
     color: black;
 }
 
-.product{
-    width: 100%;
-    height: 50%;
+#sell1, #sell2 {
+    color: #666;
 }
 
-#foryou{
-    font-size: 35px;
-    margin-left: 15px;
-}
-
-.fyp{
-    height: 100%;
+.list {
     width: 100%;
+    border-top: 3px solid #ccc;
     display: flex;
+    justify-content: space-around;
+    padding: 10px 0; /* 调整padding以减少高度 */
+    background-color: #f9f9f9;
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 固定在页面底部 */
+    left: 0;
+    z-index: 1000; /* 确保在最上层 */
 }
 
-.fyp-b{
-    width: 20%;
-    height: 50%;
-    border-style: solid;
-    border-color: #ccc; 
-    border-width: 3px;
-    margin-left: 10%;
-}
-
-#fyp-p{
-   width: 80%;
-   height: 80%;
-   margin-left: 16.5px;
-   margin-top: 15px;
-}
-
-.fyp-1t{
-    margin-left: 3%;
-    font-size: 23px;
-}
-
-#sell1{
-    margin-left: 190px;
-}
-
-#fyp-2p{
-    width: 93.5%;
-    margin-left: 11px;
-    margin-top: 11px;
- }
-
-.fyp-2t{
-    margin-left: 3%;
-    font-size: 23px;
-}
-
-#sell2{
-    margin-left: 190px;
-}
-
-.list{
-    width: 100%;
-    height: 20%;
-    margin-top: 1.5%;
-    border-style: solid;
-    border-color: #ccc;
-    border-right: none; /* 移除右边框 */
-    border-bottom: none; /* 移除下边框 */
-    border-left: none; /* 移除左边框 */
-    border-width: 3px;
-    display: flex;
-    justify-content: space-between; /* 让子元素尽可能地平均分配，使它们之间有空白 */
-    align-items: center; /* 垂直居中子元素 */
-}
-
-#list-p{
-    width: 60px;
-    height: 60px;
-    margin-top: 14px;
-    margin-left: 5px;
-}
-
-#car{
-    width: 130px;
-    height: 60px;
-    font-size: 25px;
-    background-color: rgb(231, 115, 139);
+#car, #profile {
+    padding: 10px 20px; /* 调整padding以减少按钮大小 */
+    font-size: 30px; /* 调整字体大小 */
+    font-weight: bolder;
+    background-color: rgb(115, 161, 231);
     border: none;
     border-radius: 30px;
-    font-weight: bold;
-    margin-top: 1.3%;
-    margin-left: 7%;
+    color: white;
+    cursor: pointer;
 }
-
-#profile{
-    width: 130px;
-    height: 60px;
-    font-size: 25px;
-    background-color: rgb(231, 115, 139);
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 1.3%;
-    margin-right: 5%;
-}
-
 
 .sliding-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: -200px; /* 隐藏在左侧 */
-    width: 200px;
+    left: -250px;
+    width: 250px;
     height: 100%;
     background-color: #ffffff;
-    transition: left 0.3s ease; /* 滑动动画 */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-    padding: 0px;
-    box-sizing: border-box;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding-top: 60px;
 }
 
 .sliding-menu ul {
     list-style-type: none;
     padding: 0;
-    background-color: #ffffff;
-    border-style: solid;
-    border-width: 5px;
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-    margin: 0;
-    
 }
 
 .sliding-menu ul li {
-    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sliding-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
 
 .sliding-menu.open {
-    left: 0; /* 滑出 */
+    left: 0;
 }
 
-.list-b{
+.list-b {
     display: flex;
-    border-style: solid;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-width: 3px;
-    height: 70px;
+    align-items: center;
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
 }
 
-#hehehe{
-    font-size: 30px;
-    font-weight: bold;
-    position: relative;
-    bottom: 17px;
-    left: 7px;
-}
-
-#list-p2{
+#list-p2 {
     width: 60px;
     height: 60px;
-    margin-left: 1.5%;
+    margin-right: 10px;
 }
 
-.subject{
-    margin-top: 0px;
+#hehehe {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.subject {
     font-size: 25px;
     font-weight: bold;
-    
 }
 
-
-.list-b::after {
-    content: ''; /* 添加伪元素 */
-    position: absolute; /* 绝对定位 */
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 5px; /* 右边框宽度 */
-    background-color: #000; /* 右边框颜色 */
-}
-
-.sub-b{
+.sub-b {
     display: flex;
-    padding-top: 15%;
-    padding-left: 8%;
+    align-items: center;
+    padding: 15px;
 }
 
-#sub-p{
+#sub-p {
     height: 50px;
     width: 55px;
-    position: relative;
-    bottom: 8px;
-    right: 6px;
+    margin-right: 10px;
 }
