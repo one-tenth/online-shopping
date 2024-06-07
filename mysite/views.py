@@ -79,8 +79,26 @@ def register(request):
         # 如果不是 POST 請求，返回空的註冊表單
         return render(request, 'register.html')
 
-def evaluate(request):
-    return render(request,'evaluate.html')
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Product, Comment
+from .forms import CommentForm
+
+def evaluate(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.member_id = request.user # 假设你有一个从用户到会员的外键关系
+            comment.product_id = product
+            comment.save()
+            return redirect('evaluate', product_id=product_id)
+    else:
+        form = CommentForm()
+
+    return render(request, 'product.html', {'product': product, 'form': form,'product_id': product_id})
+
+
 
 
 def showproduct(request, id):
