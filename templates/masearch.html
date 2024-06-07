@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>搜尋結果</h1>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {% if keyWord %}
+        <p>搜尋關鍵字: "{{ keyWord }}"</p>
+    {% endif %}
+
+    <ul>
+        {% if products %}
+            {% for product in products %}
+                <li>
+                    <h2>{{ product.name }}</h2>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <p>價格: {{ product.price }}</p>
+                    <p>顏色: {{ product.color }}</p>
+                    <p>描述: {{ product.description }}</p>
+                    <p>數量: {{ product.quantity }}</p>
+                    <p>類別: {{ product.category }}</p>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>沒有找到符合條件的產品。</li>
+        {% endif %}
+    </ul>
+{% endblock %}

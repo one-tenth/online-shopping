@@ -46,6 +46,10 @@ def search(request):
     products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
     return render(request, 'search.html', {'products': products, 'keyWord': kw})
 
+def masearch(request):
+    kw = request.POST.get('q')#抓表單的東西(看你header的名字)
+    products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
+    return render(request, 'masearch.html', {'products': products, 'keyWord': kw})
 #註冊
 def register(request):
     if request.method == 'POST':
@@ -279,3 +283,8 @@ def order(request):
 
 def pay(request):
      return render(request,"pay.html")
+
+def manage(request):
+    return render(request,"manage.html")
+def change(request):
+    return render(request,"change.html")

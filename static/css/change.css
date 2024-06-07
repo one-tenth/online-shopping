@@ -1,0 +1,245 @@
+.top {
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+
+#back {
+    width: 3.5%;
+    height: 3.5%;
+}
+
+#tt {
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 37%;
+    margin-bottom: 0;
+    margin-top: 1.5%;
+}
+
+.change-i {
+    width: 100%;
+    height: 80%;
+}
+
+.vip-i {
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+
+.vip-p {
+    width: 8%;
+    height: 8%;
+    margin-left: 1%;
+}
+
+.vip-n {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.vip-m {
+    width: 20px;
+    height: 35px;
+}
+
+.vip-b2 {
+    display: flex;
+}
+
+.vip-g {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 3.8%;
+}
+
+
+
+.phone,
+.email {
+    padding-left: 100px; /* 确保输入文本不会覆盖 "密碼:" */
+    margin-top: 0.5%; /* 向下调整0.5% */
+    margin-bottom: 0.5%; /* 向下调整0.5% */
+    width: 500px; /* 根据需求调整宽度 */
+    height: 50px; /* 根据需求调整高度 */
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+}
+
+::placeholder {
+    font-size: 25px;
+    color: black;
+}
+
+.birth-month,
+.birth-day {
+    width: 100px;
+    height: 60px;
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    margin-bottom: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#birth-year {
+    width: 100px;
+    height: 60px;
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    margin-bottom: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.submit {
+    position: absolute;
+    margin-left: 70%;
+    margin-top: -130px;
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    background-color: #ffffff;
+    border-color: rgb(12, 12, 173);
+    border-width: 7px;
+}
+
+.man, .woman {
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 80px;
+}
+
+.male, .female {
+    transform: scale(1.25);
+    margin-left: 30px;
+}
+
+.gender {
+    font-size: 25px;
+    background-color: #ececec;
+    border-radius: 100px;
+}
+
+.change-all {
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+}
+
+.pencil {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -7%; /* 向左调整4.5% */
+    top: 10px;
+}
+
+.pencil-s {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -12%; /* 向左调整4.5% */
+    top: 10px;
+}
+
+.pencil-s2 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: -3%; /* 向左调整4.5% */
+    top: 10px;
+}
+
+
+.birthdate-container label {
+    font-size: 25px;
+}
+
+#cancel-account {
+    font-size: 20px;
+    text-decoration: underline;
+    color: initial; /* 这里可以设置初始颜色，例如 color: black; */
+}
+
+#cancel-account:hover {
+    color: rgb(255, 0, 0); /* 这里设置鼠标悬停时的颜色 */
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 1.5%; /* 整个对象的上下间隔加1.5% */
+}
+
+.fixed-placeholder {
+    position: absolute;
+    top: 48.5%; /* 向上调整1.5% */
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 25px;
+    color: black;
+}
+
+.password {
+    padding-left: 100px; /* 确保输入文本不会覆盖 "密碼:" */
+    margin-top: 0.5%; /* 向下调整0.5% */
+    margin-bottom: 0.5%; /* 向下调整0.5% */
+    width: 500px; /* 根据需求调整宽度 */
+    height: 50px; /* 根据需求调整高度 */
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+}
+
+
+.name {
+    padding-left: 100px; /* 确保输入文本不会覆盖 "暱稱:" */
+    margin-top: 1.5%; /* 向下调整1.5% */
+    margin-bottom: 1.5%; /* 向下调整1.5% */
+    width: 300px; /* 根据需求调整宽度 */
+    height: 50px; /* 根据需求调整高度 */
+    border-radius: 80px;
+    background-color: #ececec;
+    border: none;
+    font-size: 20px;
+}
+
+.phone-container {
+    position: relative;
+    display: inline-block;
+    display: block;
+}
+
+.phone-container .fixed-placeholder {
+    position: absolute;
+    top: 48.5%; /* 向上调整1.5% */
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 25px;
+    color: black;
+}
+
+.phone {
+    padding-left: 100px; /* 确保输入文本不会覆盖 "電話:" */
+    margin-top: 1.5%; /* 向下调整1.5% */
+    margin-bottom: 1.5%; /* 向下调整1.5% */
+    font-size: 20px;
+}
+
+.email {
+    padding-left: 100px; /* 确保输入文本不会覆盖 "電話:" */
+    margin-top: 1.5%; /* 向下调整1.5% */
+    margin-bottom: 1.5%; /* 向下调整1.5% */
+    font-size: 20px;
+}
+
+

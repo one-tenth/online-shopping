@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={%static 'css/change.css'%}>
+    <script src="change.js"></script> 
+    <title>修改資料</title>
+</head>
+<body>
+    <div class="top">
+        <a href="{% url 'home' %}">
+            <img id="back" src="{% static 'images/back.png' %}" alt="">
+        </a>
+        <p id="tt">我的基本資料</p>
+    </div>
+    <div class="change-i">
+        <div class="vip-i">
+            <img class="vip-p" src="{% static 'images/vip-p.png' %}" alt="">
+            <div class="vip-b1">
+                <p class="vip-n">676767</p>
+                <div class="vip-b2">
+                    <img class="vip-m" src="{% static 'images/vip-m.png' %}" alt="">
+                    <p class="vip-g">認證會員</p>
+                </div>  
+            </div>
+        </div>
+        <div class="change-all">
+            <form class="radius" action="{% url 'register' %}" method="post">
+                <div class="input-container">
+                    <span class="fixed-placeholder">暱稱:</span>
+                    <input type="text" class="name" name="name" placeholder="XXX" required>
+                    <img class="pencil-s" src="{% static 'images/pencil.png' %}" alt="">
+                </div>
+                <br>
+                <br>
+                <div class="birthdate-container">
+                    <label for="birth-year">出生年:</label>
+                    <input type="text" id='birth-year' name="birth-year" placeholder="輸入年">
+                
+                    <label for="birth-month">出生月:</label>
+                    <select class="birth-month" name="birth-month" required>
+                        <option value="">選擇月</option>
+                        <option value="1">1月</option>
+                        <option value="2">2月</option>
+                        <option value="3">3月</option>
+                        <option value="4">4月</option>
+                        <option value="5">5月</option>
+                        <option value="6">6月</option>
+                        <option value="7">7月</option>
+                        <option value="8">8月</option>
+                        <option value="9">9月</option>
+                        <option value="10">10月</option>
+                        <option value="11">11月</option>
+                        <option value="12">12月</option>
+                    </select>
+                
+                    <label for="birth-day">出生日:</label>
+                    <input type="text" class="birth-day" name="birth-day" placeholder="d" required>
+                </div>                
+                <form class="gen" >
+                    <label for="gender" class="gender">性別 ：</label>
+                    <input type="radio" class="male" name="gender" value="male">
+                    <label for="male" class="man">男</label>
+                    <input type="radio" class="female" name="gender" value="female">
+                    <label for="female" class="woman">女</label>
+                </form><br>
+                <div class="phone-container">
+                    <span class="fixed-placeholder">電話:</span>
+                    <input type="tel" class="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+                           placeholder="09xx - xxx - xxx" required>
+                    <img class="pencil-s2" src="images/pencil.png" alt="">
+                </div>
+                <div class="phone-container"> <!-- 重复电话输入框的结构 -->
+                    <span class="fixed-placeholder">信箱:</span>
+                    <input type="email" class="email" name="email" placeholder="" required>
+                    <img class="pencil-s2" src="{% static 'images/pencil.png' %}" alt="">
+                </div>
+                <form action="{% url 'register' %}" method="post">
+                    <div class="input-container">
+                        <span class="fixed-placeholder">密碼:</span>
+                        <input type="password" class="password" name="password" placeholder="" required>
+                        <img class="pencil" src="{% static 'images/pencil.png' %}" alt="">
+                    </div>
+                   
+                </form>
+            </form>
+            <br>
+            <br>
+            <a id="cancel-account" href="#">註銷帳號</a>
+        </div>
+    </div>
+</body>
+</html>

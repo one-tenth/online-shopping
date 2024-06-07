@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品管理</title>
+    <link rel="stylesheet" href={%static 'css/manage.css'%}>
+    <script src="{% static 'js/manage.js' %}" defer></script> 
+</head>
+<body>
+    <div class="top">
+        <p class="top-t">管理者@A1001</p>
+        {% comment %} <div class="search-box">
+            <img class="search" src="{% static 'images/search.png' %}" alt="">
+            <input type="text" class="search-input" placeholder="請輸入關鍵字 例:短袖女裝">
+        </div> {% endcomment %}
+        <form method="POST" action="/masearch/"> ``
+            {% csrf_token %}
+            <div class="search-box">
+                <input type="text" id="q" name="q" placeholder="請輸入關鍵字 例:短袖女裝">
+                <button type="submit" style="font-family:微軟正黑體;font-weight:bolder;font-size:22pt;">&#x1F50E;</button>
+            </div>
+        </form>
+    </div>
+    <div class="product">
+        <p class="product-id">#C0065</p>
+        <div class="product-box">
+            <img class="pp" src="{% static 'images/fyp2.png' %}" alt="">
+            <div class="product-in">
+                <p class="product-n">針織吊帶</p>
+                <div class="price">
+                    <p class="it">價格 : NT$399</p>
+                </div>
+            </div>
+        </div> 
+        <div class="instock">
+            <p class="instock-last">庫存剩餘 : 3</p>
+            <div class="instock-plus">
+                <p class="instock-pp">新增庫存 :</p>
+                <div class="quantity-container">
+                    <button type="button" onclick="changeQuantity('quantity1', -1)">-</button>
+                    <input type="number" class="quantity" id="quantity1" name="quantity1" min="0" max="100" value="0">
+                    <button type="button" onclick="changeQuantity('quantity1', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
