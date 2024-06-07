@@ -85,7 +85,7 @@ from .forms import CommentForm
 
 def evaluate(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    comments = Comment.objects.filter(enabled=True).order_by('-scoreDate')[:30]
+    comments = Comment.objects.filter(product_id=product, enabled=True).order_by('-scoreDate')[:30]
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -97,7 +97,7 @@ def evaluate(request, product_id):
     else:
         form = CommentForm()
 
-    return render(request, 'evaluate.html', {'product': product, 'form': form,'product_id': product_id})
+    return render(request, 'evaluate.html', locals())
 
 
 

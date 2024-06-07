@@ -81,11 +81,11 @@ class OrderDetail(models.Model):
 #評論資料
 class Comment(models.Model):
     Score = (
-    ('onestar', '★'),
-    ('twostar', '★★'),
-    ('threestar', '★★★'),
-    ('fourstar', '★★★★'),
-    ('fivestar', '★★★★★'),
+    ('1分', '★'),
+    ('2分', '★★'),
+    ('3分', '★★★'),
+    ('4分', '★★★★'),
+    ('5分', '★★★★★'),
 )   
     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
