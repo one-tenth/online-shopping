@@ -22,7 +22,7 @@ class OrderDetailAdmin(admin.ModelAdmin):
     list_display=['order_id','product_id','totQua']
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display=['id','member_id','product_id','order_id','comment','score']
+    list_display=['id','member_id','product_id','comment','score']
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Product,ProductAdmin)
 admin.site.register(InventoryChange)

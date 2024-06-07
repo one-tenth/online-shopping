@@ -26,3 +26,14 @@ class UserRegisterForm(forms.ModelForm):
             self.add_error('password_confirm', "密碼不匹配")
 
         return cleaned_data
+
+from django import forms
+from .models import Comment
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['comment', 'score']
+        widgets = {
+            'score': forms.RadioSelect(choices=Comment.Score)
+        }

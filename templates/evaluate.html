@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -63,4 +63,68 @@
 
 </body>
 
-</html>
+</html> {% endcomment %}
+
+{% comment %} 
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/evaluate.css' %}">
+</head>
+{% block content %}
+  <h1>{{ product.name }}</h1>
+  <img src="{{ product.image.url }}" alt="{{ product.name }}">
+  <p>Price: {{ product.price }}</p>
+  <p>Color: {{ product.color }}</p>
+  <p>Description: {{ product.description }}</p>
+  <p>Quantity: {{ product.quantity }}</p>
+  <p>Category: {{ product.category }}</p>
+
+  <h2>Leave a Comment</h2>
+  <form method="post" action="{% url 'product_detail' product.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Comments</h2>
+  <ul>
+    {% for comment in product.comment_set.all %}
+      <li>
+        <strong>{{ comment.member_id.user.username }}</strong> ({{ comment.score }} stars):
+        <p>{{ comment.comment }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+ {% endcomment %}
+ {% load static %}
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/evaluate.css' %}">
+    </head>
+ <body>
+     <h1>Evaluate Product: {{ product.name }}</h1>
+ 
+     <form method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit">Submit</button>
+     </form>
+ 
+     <!-- 显示已有的评论 -->
+     <h2>Comments</h2>
+     <ul>
+         {% for comment in product.comments.all %}
+             <li>{{ comment.content }} - {{ comment.member_id }}</li>
+         {% endfor %}
+     </ul>
+ </body>
+ </html>
+ 

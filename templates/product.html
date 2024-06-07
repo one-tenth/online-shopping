@@ -26,7 +26,7 @@
                         <div class="three-3">
                             <p>庫存:{{ product.quantity }}</p>
                             <p>描述: {{ product.description|safe }}</p>
-                            <a href="{% url 'evaluate' %}"><li class="evaluate">評價</li></a>
+                            <a href="/evaluate/{{product.id}}/"><li class="evaluate">評價</li></a>
                         </div>
                         
                     </div>
