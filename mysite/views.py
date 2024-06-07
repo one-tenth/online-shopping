@@ -92,11 +92,11 @@ def evaluate(request, product_id):
             comment.member_id = request.user # 假设你有一个从用户到会员的外键关系
             comment.product_id = product
             comment.save()
-            return redirect('evaluate', product_id=product_id)
+            return redirect('product', id=product_id)
     else:
         form = CommentForm()
 
-    return render(request, 'product.html', {'product': product, 'form': form,'product_id': product_id})
+    return render(request, 'evaluate.html', {'product': product, 'form': form,'product_id': product_id})
 
 
 

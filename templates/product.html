@@ -24,8 +24,10 @@
                 <div class="three-3">
                     <div class="three-4">
                         <div class="three-3">
+                            <p>價格:{{product.price}}
                             <p>庫存:{{ product.quantity }}</p>
                             <p>描述: {{ product.description|safe }}</p>
+                            
                             <a href="/evaluate/{{product.id}}/"><li class="evaluate">評價</li></a>
                         </div>
                         
@@ -34,28 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="four">
-        <div class="four-1">
-            <p class="four-2">藏藍色</p>
-            <img src="{% static 'images/product3.png' %}">
-        </div>
-        <div class="four-1">
-            <p class="four-2">鐵灰色</p>
-            <img src="{% static 'images/product4.png' %}">
-        </div>
-        <div class="four-1">
-            <p class="four-2">黑色</p>
-            <img src="{% static 'images/product5.png' %}">
-        </div>
-    </div>
     <hr>
-    <div class="six">
-        <div class="five">
-            <p>大尺碼寬鬆T-shirt</p>
-        </div>
-        <b class="five-1">NT$389</b>
-        <span class="vertical-line"></span>
-    </div>
     <div class="five-2">
         <i class="fa fa-money" aria-hidden="true"></i>
         <input type="button" class="five-3" value="直接購買">
