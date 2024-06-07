@@ -92,3 +92,4 @@ class Comment(models.Model):
     comment = models.TextField()
     score = models.CharField(max_length=10,choices=Score)
     scoreDate = models.DateTimeField(auto_now_add=True)
+    enabled = models.BooleanField(default=True)

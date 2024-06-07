@@ -119,21 +119,32 @@
             </div>
     </head>
  <body>
-     <h1>Evaluate Product: {{ product.name }}</h1>
+     <h1>產品名稱: {{ product.name }}</h1>
  
      <form method="post">
          {% csrf_token %}
          {{ form.as_p }}
-         <button type="submit">Submit</button>
+         <button type="submit" class="btn btn-primary">提交</button>
      </form>
  
      <!-- 显示已有的评论 -->
-     <h2>Comments</h2>
+     <h2>評論</h2>
      <ul>
-         {% for comment in product.comments.all %}
-             <li>{{ comment.content }} - {{ comment.member_id }}</li>
-         {% endfor %}
-     </ul>
+        {% for p in comments %}
+        <div class="col-sm-12 col-md-4">
+            <div class='card'>
+                <div class='card-header 'align='left' style='background-color:#5B7493; color:#ffffff;font-family:微軟正黑體;font-size:18pt;font-weight:bold;'>【{{ p.username }}】分數:{{ p.score }}</div>
+                <div class='card-body' style="background-color:#F5F4F0; font-family:微軟正黑體;font-size:14pt;font-weight:bold;">{{ p.comment | linebreaks }}</div>
+                <div class='card-footer' align='right' style='background-color:#5B7493; color:#ffffff; font-family:微軟正黑體;font-size:12pt;font-weight:bold;'>
+                    <i><small>{{ p.scoreDate }}</small></i>
+    
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <li>目前還沒有評論喔</li>
+        {% endfor %}
+    </ul>
  </body>
  </html>
  

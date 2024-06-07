@@ -85,8 +85,8 @@ from .forms import CommentForm
 
 def evaluate(request, product_id):
     product = get_object_or_404(Product, id=product_id)
+    comments = Comment.objects.filter(enabled=True).order_by('-scoreDate')[:30]
     if request.method == 'POST':
-        comments = Comment.objects.all()
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
