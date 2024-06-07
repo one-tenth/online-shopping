@@ -108,6 +108,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="{% static 'css/evaluate.css' %}">
+        <a href="{% url 'product' product.id %}">                      
+            <img id="house" src="{% static 'images/house.png' %}" alt="">
+            </a>
+        <a href={%url 'home'%}>
+            <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+            </a>
+            <div class="two">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:100%;">
+            </div>
     </head>
  <body>
      <h1>Evaluate Product: {{ product.name }}</h1>
