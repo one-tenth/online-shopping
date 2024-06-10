@@ -13,7 +13,7 @@
         {% if products %}
             {% for product in products %}
                 <li>
-                    <h2>{{ product.name }}</h2>
+                    <h2><a href='/product/{{ item.id }}'>{{ item.name }}</a></h2>
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
                     <p>價格: {{ product.price }}</p>
                     <p>描述: {{ product.description }}</p>

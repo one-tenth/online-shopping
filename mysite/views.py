@@ -51,6 +51,12 @@ def masearch(request):
     products = Product.objects.filter(name__icontains=kw)#name__icontains 要以name這個欄位做相似查詢相似查詢
     return render(request, 'masearch.html', {'products': products, 'keyWord': kw})
 #註冊
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+import re
+
 def register(request):
     if request.method == 'POST':
         # 從 POST 請求中獲取表單數據
@@ -63,25 +69,58 @@ def register(request):
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
         
+        # 檢查所有必填字段是否已填寫
+        if not all([name, borndate, gender, phoneNum, email, password, confirm_password]):
+            return render(request, 'register.html', {'error': '所有字段都是必填的'})
+        
         # 檢查密碼是否一致
         if password != confirm_password:
             return render(request, 'register.html', {'error': '密碼與確認密碼不一致'})
         
+        # 檢查密碼長度
+        if len(password) < 8:
+            return render(request, 'register.html', {'error': '密碼長度應至少為8位'})
+        
+        # 檢查電子郵件格式
+        try:
+            validate_email(email)
+        except ValidationError:
+            return render(request, 'register.html', {'error': '電子郵件格式不正確'})
+        
+        # 檢查用戶名是否已存在
+        if User.objects.filter(username=name).exists():
+            return render(request, 'register.html', {'error': '用戶名已存在'})
+
+        date_pattern = r'^\d{4}-\d{2}-\d{2}$'
+        if not re.match(date_pattern, borndate):
+            return render(request, 'register.html', {'error': '出生日期格式不正確，應為YYYY-MM-DD'})
+
+        
+        # 檢查電子郵件是否已存在
+        if User.objects.filter(email=email).exists():
+            return render(request, 'register.html', {'error': '電子郵件已存在'})
+        
+        # 檢查電話號碼格式
+        if not re.match(r'^\d{4}-\d{3}-\d{3}$', phoneNum):
+            return render(request, 'register.html', {'error': '電話號碼格式不正確'})
+        
         # 創建會員對象並保存到資料庫中
-        member = Member.objects.create_user(
+        user = User.objects.create_user(
             username=name,
-            borndate=borndate,
-            gender=gender,
-            phoneNum=phoneNum,
             email=email,
             password=password
         )
+        user.memberprofile.borndate = borndate
+        user.memberprofile.gender = gender
+        user.memberprofile.phoneNum = phoneNum
+        user.memberprofile.save()
         
         # 重定向到註冊成功頁面或其他適當的頁面
         return redirect('/')
     else:
         # 如果不是 POST 請求，返回空的註冊表單
         return render(request, 'register.html')
+
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Comment

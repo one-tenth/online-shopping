@@ -82,6 +82,11 @@
     font-size: 25px;
     color: black;
 }
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 30px; /* 设置错误信息的字体大小 */
+}
 
 /* .title {
     margin-left: 47%;
