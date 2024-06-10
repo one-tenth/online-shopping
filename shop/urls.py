@@ -45,4 +45,6 @@ urlpatterns = [
     path('add-to-cart/<int:product_id>/', mv.add_to_cart, name='add_to_cart'),
     path('manage/',mv.manage,name='manage'),
     path('change/',mv.change,name='change'),
+    path('inventory/', mv.inventory, name='inventory'),
+    path('add_stock/<int:product_id>/', mv.add_stock, name='add_stock'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

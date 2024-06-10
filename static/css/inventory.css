@@ -1,0 +1,57 @@
+/* inventory.css */
+.title {
+    margin-bottom: 2%;
+    font-size: 50px;
+    background-color: rgb(191, 207, 235);
+    text-align: center;
+    padding: 10px;
+}
+
+.products {
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #0e008d;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 65%;
+    max-width: 900px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-name, .product-stock {
+    margin: 0;
+    font-size: 20px;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+}
+
+.product input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.product button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

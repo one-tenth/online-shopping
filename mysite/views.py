@@ -327,3 +327,21 @@ def manage(request):
     return render(request,"manage.html")
 def change(request):
     return render(request,"change.html")
+
+from django.shortcuts import get_object_or_404, redirect
+from .models import Product
+
+def add_stock(request, product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, id=product_id)
+        quantity = int(request.POST.get('quantity'))
+        if quantity > 0:
+            product.quantity += quantity
+            product.save()
+        return redirect('inventory')  # 假设库存页面的URL名称为'inventory'
+    else:
+        return redirect('inventory')
+
+def inventory(request):
+    products = Product.objects.all()
+    return render(request, 'inventory.html', {'products': products})
