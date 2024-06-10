@@ -9,10 +9,10 @@
     display: flex;
 }
 
-.two>img {
-    width: 90%;
+.two > img {
+    width: 100%; /* 商品圖片放大 */
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 0;
 }
 
 .three {
@@ -67,7 +67,7 @@ h1 {
     margin-right: -20%;
 }
 
-.three-2>p {
+.three-2 > p {
     font-size: 105%;
     margin-top: 5%;
 }
@@ -212,7 +212,7 @@ hr {
     border-radius: 50px;
     color: #5e95e0;
     font-size: 125%;
-    background-color: #aec5e7;
+    background-color: #142b4e;
     margin-top: 1%;
 }
 
