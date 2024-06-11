@@ -55,3 +55,7 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.success-message {
+    font-weight: bold;
+    font-size: 30px; /* 设置错误信息的字体大小 */
+}

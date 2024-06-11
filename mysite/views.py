@@ -338,6 +338,7 @@ def add_stock(request, product_id):
         if quantity > 0:
             product.quantity += quantity
             product.save()
+            messages.success(request, f'{product.name} 的庫存成功增加 {quantity} 個')
         return redirect('inventory')  # 假设库存页面的URL名称为'inventory'
     else:
         return redirect('inventory')
