@@ -314,6 +314,21 @@ def shopcar(request):
         return render(request, 'shopcar.html', {'cart_items': cart_items})
     else:
         return redirect('login')
+    
+def clear_cart(request):
+    member_id = request.user.id
+    
+    if member_id:
+        # 获取当前用户的购物车内容
+        cart_items = shoppingCart.objects.filter(member_id_id=member_id)
+        
+        # 删除购物车中的所有项目
+        cart_items.delete()
+        
+        # 显示成功消息
+        messages.success(request, "成功清空購物車。")
+        
+    return redirect('shopcar')
 
 # def shopcar(request):
 #     return render(request,"shopcar.html")

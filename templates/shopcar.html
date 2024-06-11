@@ -37,8 +37,10 @@
 
         <div class="bottom">
             <div class="trash-b" onclick="resetCart()">
-                <img class="trash" src="{% static 'images/trash.png' %}" alt="">
+                <a href="{% url 'clear_cart' %}">
+                <img class="trash" src="{% static 'images/trash.png' %}" alt=""></a>
                 <p id="trash-t">清空購物車</p>
+                
             </div>
             <div class="all-b">
                 <input id="check-all" type="checkbox" name="itemAll" onclick="toggleAll(this)">
